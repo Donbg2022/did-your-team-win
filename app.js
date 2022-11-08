@@ -1,28 +1,35 @@
-//api fetch to get game boxscore
+//api fetch to get game boxscore 
+  let nucksGoals = 0
+  let other = 0
+
+
+
+
+  //function to determine the winner of most previous game
+
+
+
+
+
 const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?expand=team.schedule.previous')
 .then((res) =>{
   //getting the game id and using a template literal to insert into a new api get request which will get the last game played 
   let id = res.data.teams[0].previousGameSchedule.dates[0].games[0].gamePk
   let nhlGameId = `https://statsapi.web.nhl.com/api/v1/game/${id}/boxscore`;
   const nhlStats = axios.get(nhlGameId)
-  .then(whoWon)
-  })
-  let nucksGoals = 0
-  let other = 0
-
-
-  //function to determine the winner of most previous game
-function whoWon(result){
-  if (result.data.teams.home.team.name === 'Vancouver Canucks'){
-    //canucks and other team goal count updated
-let nucksGoals = result.data.teams.home.teamStats.teamSkaterStats.goals
-let other = result.data.teams.away.teamStats.teamSkaterStats.goals
+  .then(({data})=> {
+    
+  if (data.teams.home.team.name === 'Vancouver Canucks'){
+let nucksGoals = data.teams.home.teamStats.teamSkaterStats.goals
+let other = data.teams.away.teamStats.teamSkaterStats.goals
 
 //return an if statement 
 if (nucksGoals > other){
  return 'winnner' + nucksGoals
 }else if (nucksGoals === other){
+  document.createElement('img').src = ('lumberjack.png')
   return 'OT' + nucksGoals + '-' + other
+  
 }else {
   return loser
 }
@@ -38,10 +45,7 @@ if (nucksGoals > other){
 }else {
   return loser
 }
-}
-}
-
-
+}})})
 
 const roster = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23/roster')
 
@@ -64,6 +68,6 @@ burger.addEventListener('click', function(){
 
 //change photo if we lost vs if we won
 const img = document.querySelector('img')
-const winner = document.querySelector('#winbtn')
+const winBtn = document.querySelector('#winbtn')
 
-winner.addEventListener('click', gameIdLocater);
+// winBtn.addEventListener('click', whoWon);
