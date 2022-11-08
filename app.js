@@ -23,30 +23,23 @@ const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?ex
 let nucksGoals = data.teams.home.teamStats.teamSkaterStats.goals
 let other = data.teams.away.teamStats.teamSkaterStats.goals
 
-//return an if statement 
-if (nucksGoals > other){
- return 'winnner' + nucksGoals
-}else if (nucksGoals === other){
-  document.createElement('img').src = ('lumberjack.png')
-  return 'OT' + nucksGoals + '-' + other
-  
-}else {
-  return loser
-}
-
 }else if (result.data.teams.home.team.name !== 'Vancouver Canucks'){
 let nucksGoals = result.data.teams.away.teamStats.teamSkaterStats.goals
 let other = result.data.teams.home.teamStats.teamSkaterStats.goals
 
+}})})
+const img = document.querySelector('img')
+const winBtn = document.querySelector('#winbtn')
+winBtn.addEventListener('click', () =>{
 if (nucksGoals > other){
-  return 'winnner' + nucksGoals
+ return 'winnner' + nucksGoals
 }else if (nucksGoals === other){
+  console.log(nucksGoals)
   return 'OT' + nucksGoals + '-' + other
+  
 }else {
   return loser
-}
-}})})
-
+}})
 const roster = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23/roster')
 
 
@@ -67,7 +60,6 @@ burger.addEventListener('click', function(){
 })
 
 //change photo if we lost vs if we won
-const img = document.querySelector('img')
-const winBtn = document.querySelector('#winbtn')
+
 
 // winBtn.addEventListener('click', whoWon);
