@@ -85,9 +85,23 @@ nav div{
 
 #mainimg{
   max-width: 90%;
-  display: block;
+  display: none;
   margin-left: auto;
   margin-right: auto;
+}
+#winorlosebtn{
+  text-align: center;
+  margin-top: 6rem;
+}
+#winorlosebtn button{
+  padding: 2rem;
+  background-color: rgb(4,28,44);
+  color: white;
+  border: none;
+  
+}
+#winorlosebtn button:active{
+  background-color: rgb(10,134,61);
 }
 
 #mainimgcontainer{

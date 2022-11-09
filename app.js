@@ -51,7 +51,8 @@ burger.addEventListener('click', function(){
 
 })
 
-//change photo if we lost vs if we won
-
-
-// winBtn.addEventListener('click', whoWon);
+const btn = document.querySelector('#winorlosebtn');
+btn.addEventListener('click', function(){
+  mainImg.style.display = 'block'
+  btn.style.display = 'none'
+})
