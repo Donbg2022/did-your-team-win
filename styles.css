@@ -18,18 +18,8 @@ nav img{
   margin-left: 5px;
   margin-top: 5px;
 }
-.links {
-  list-style: none;
-  display: inline-flex;
-  padding: 2.5rem;
-  color: white;
-  font-size: large;
-   
-  
-}
-a{
-  text-decoration: none;
-}
+
+
 nav button{
   margin: 30px 10px 30px 30px;
   width: 8rem;
@@ -50,20 +40,6 @@ nav div{
   margin: 40px 30px 40px 30px;
   display: none;
 }
-
-/* making the navbar responsive */
-
-
-  #reactivelinks{
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    font-size: medium;
-    display: none;
-  }
-
-
-
 
 
   /* homepage Main photo */
