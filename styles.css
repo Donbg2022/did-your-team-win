@@ -109,6 +109,10 @@ nav div{
 #weWL{
   display: none;
   text-align: center;
+  padding: 2rem;
+  color: white;
+  font-weight: 600;
+  font-size: larger;
 }
 #mainimgcontainer{
   text-align: center;
