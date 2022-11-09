@@ -105,6 +105,8 @@ nav div{
 }
 #record{
   display: none;
+  font-weight: 600;
+  font-size: larger;
 }
 #weWL{
   display: none;

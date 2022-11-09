@@ -18,7 +18,6 @@ const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?ex
   let nhlGameId = `https://statsapi.web.nhl.com/api/v1/game/${id}/boxscore`;
   const nhlStats = axios.get(nhlGameId)
   .then(({data})=> {
-    console.log(data)
     if (data.teams.away.team.name === 'Vancouver Canucks' && data.teams.home.teamStats.teamSkaterStats.goals < data.teams.away.teamStats.teamSkaterStats.goals){
       let other = data.teams.home.team.name
       let score = data.teams.away.teamStats.teamSkaterStats.goals + '-' +  data.teams.home.teamStats.teamSkaterStats.goals
@@ -54,12 +53,14 @@ const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?ex
 // get the record of the canucks
 const canucksRecord = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23/stats')
 .then(({data}) => {
-  console.log(data)
   let trueRecord = data.stats[0].splits[0].stat.wins + '-' + data.stats[0].splits[0].stat.losses + '-' + data.stats[0].splits[0].stat.ot
-  record.innerText = `${trueRecord}`
+  record.innerText = `Record: ${trueRecord}`
 })
 
 const roster = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23/roster')
+.then(({data}) => {
+  console.log(data)
+})
 
 
 //adding reacctivity to the navbar
@@ -85,4 +86,21 @@ btn.addEventListener('click', function(){
   btn.style.display = 'none'
   record.style.display = 'block'
   winOrLossText.style.display = 'block'
+})
+
+//change color scheme with navbar button click
+const navbtn = document.querySelector('#navbtn')
+const body = document.querySelector('body')
+const mainBtn = document.querySelector('#mainBtn')
+let count = 1
+navbtn.addEventListener('click', function(){
+  count++
+  body.style.backgroundColor = 'rgb(4,28,44)'
+  mainBtn.style.backgroundColor = 'rgb(10,134,61)'
+  navbtn.style.backgroundColor = 'rgb(10,134,61)'
+  if (count % 2 !== 0){
+    body.style.backgroundColor = 'rgb(10,134,61)'
+    mainBtn.style.backgroundColor = 'rgb(4,28,44)'
+    navbtn.style.backgroundColor = 'rgb(4,28,44)'
+  }
 })
