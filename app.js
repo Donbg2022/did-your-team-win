@@ -18,22 +18,19 @@ const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?ex
   let nhlGameId = `https://statsapi.web.nhl.com/api/v1/game/${id}/boxscore`;
   const nhlStats = axios.get(nhlGameId)
   .then(({data})=> {
-    
-  if (data.teams.home.team.name === 'Vancouver Canucks'){
-    let nucksGoals = data.teams.home.teamStats.teamSkaterStats.goals
-    let other = data.teams.away.teamStats.teamSkaterStats.goals
-  if (nucksGoals > other){
- return 'winnner' + nucksGoals
-}else if (nucksGoals === other){
-  console.log(nucksGoals)
-  return 'OT' + nucksGoals + '-' + other
-}else{
-  return loser}
-}else if (result.data.teams.home.team.name !== 'Vancouver Canucks'){
-let nucksGoals = result.data.teams.away.teamStats.teamSkaterStats.goals
-let other = result.data.teams.home.teamStats.teamSkaterStats.goals
-
-}})})
+    console.log(data)
+    if (data.teams.away.team.name === 'Vancouver Canucks' && data.teams.home.teamStats.teamSkaterStats.goals < data.teams.away.teamStats.teamSkaterStats.goals ||
+     data.teams.home.team.name === 'Vancouver Canucks' && data.teams.away.teamStats.teamSkaterStats.goals < data.teams.home.teamStats.teamSkaterStats.goals){
+      console.log('winnners')
+      //make this a happy photo
+      // mainImg.src = 'lumberjack.png'
+    }
+    else if (data.teams.away.team.name === 'Vancouver Canucks' && data.teams.home.teamStats.teamSkaterStats.goals > data.teams.away.teamStats.teamSkaterStats.goals ||
+    data.teams.home.team.name === 'Vancouver Canucks' && data.teams.away.teamStats.teamSkaterStats.goals > data.teams.home.teamStats.teamSkaterStats.goals){
+      console.log('losers')
+      //change image here
+    }
+  })})
 
 const roster = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23/roster')
 
