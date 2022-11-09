@@ -52,23 +52,8 @@ nav div{
 }
 
 /* making the navbar responsive */
-@media (max-width: 850px){
-  nav button{
-    display: none;
-  }
-  #burger{
-    display: block;
-  }
-  nav ul{
-    display: none;
-  }
-}
-@media (min-width: 849px){
-  #hiddenlink{
-    display: none
-  }
-  
-}
+
+
   #reactivelinks{
     text-align: center;
     margin: 0;
