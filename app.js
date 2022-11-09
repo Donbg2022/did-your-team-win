@@ -1,7 +1,7 @@
 //api fetch to get game boxscore 
   let nucksGoals = 0
   let other = 0
-
+  const mainImg = document.querySelector('#mainimg')
 
 
 
@@ -20,26 +20,21 @@ const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?ex
   .then(({data})=> {
     
   if (data.teams.home.team.name === 'Vancouver Canucks'){
-let nucksGoals = data.teams.home.teamStats.teamSkaterStats.goals
-let other = data.teams.away.teamStats.teamSkaterStats.goals
-
+    let nucksGoals = data.teams.home.teamStats.teamSkaterStats.goals
+    let other = data.teams.away.teamStats.teamSkaterStats.goals
+  if (nucksGoals > other){
+ return 'winnner' + nucksGoals
+}else if (nucksGoals === other){
+  console.log(nucksGoals)
+  return 'OT' + nucksGoals + '-' + other
+}else{
+  return loser}
 }else if (result.data.teams.home.team.name !== 'Vancouver Canucks'){
 let nucksGoals = result.data.teams.away.teamStats.teamSkaterStats.goals
 let other = result.data.teams.home.teamStats.teamSkaterStats.goals
 
 }})})
-const img = document.querySelector('img')
-const winBtn = document.querySelector('#winbtn')
-winBtn.addEventListener('click', () =>{
-if (nucksGoals > other){
- return 'winnner' + nucksGoals
-}else if (nucksGoals === other){
-  console.log(nucksGoals)
-  return 'OT' + nucksGoals + '-' + other
-  
-}else {
-  return loser
-}})
+
 const roster = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23/roster')
 
 
