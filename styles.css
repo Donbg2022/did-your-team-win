@@ -103,7 +103,13 @@ nav div{
 #winorlosebtn button:active{
   background-color: rgb(10,134,61);
 }
-
+#record{
+  display: none;
+}
+#weWL{
+  display: none;
+  text-align: center;
+}
 #mainimgcontainer{
   text-align: center;
 }
