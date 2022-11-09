@@ -21,31 +21,43 @@ const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?ex
     console.log(data)
     if (data.teams.away.team.name === 'Vancouver Canucks' && data.teams.home.teamStats.teamSkaterStats.goals < data.teams.away.teamStats.teamSkaterStats.goals){
       let other = data.teams.home.team.name
-      winOrLossText.innerText = `We beat the ${other} `
+      let score = data.teams.away.teamStats.teamSkaterStats.goals + '-' +  data.teams.home.teamStats.teamSkaterStats.goals
+      winOrLossText.innerText = `We beat the ${other} ${score} !!!!`
       console.log('winnners')
       //make this a happy photo
       // mainImg.src = 'lumberjack.png'
     }else if (data.teams.home.team.name === 'Vancouver Canucks' && data.teams.away.teamStats.teamSkaterStats.goals < data.teams.home.teamStats.teamSkaterStats.goals){
       let other = data.teams.away.team.name
-      winOrLossText.innerText = `We beat the ${other} `
+      let score = data.teams.home.teamStats.teamSkaterStats.goals + '-' +  data.teams.away.teamStats.teamSkaterStats.goals
+      winOrLossText.innerText = `We beat the ${other} ${score} !!!!`
       console.log('winnners')
       //make this a happy photo
       // mainImg.src = 'lumberjack.png'
     }
     else if (data.teams.away.team.name === 'Vancouver Canucks' && data.teams.home.teamStats.teamSkaterStats.goals > data.teams.away.teamStats.teamSkaterStats.goals){
       let other = data.teams.home.team.name
-      winOrLossText.innerText = `We lost to the ${other}`
+      let score = data.teams.home.teamStats.teamSkaterStats.goals + '-' +  data.teams.away.teamStats.teamSkaterStats.goals
+      winOrLossText.innerText = `We lost to the ${other} ${score}:(`
       console.log('losers')
       //change image here
      }
      else if (data.teams.home.team.name === 'Vancouver Canucks' && data.teams.away.teamStats.teamSkaterStats.goals > data.teams.home.teamStats.teamSkaterStats.goals) {
       let other = data.teams.away.team.name
-      winOrLossText.innerText = `We lost to the ${other}`
+      let score = data.teams.away.teamStats.teamSkaterStats.goals + '-' +  data.teams.home.teamStats.teamSkaterStats.goals
+      winOrLossText.innerText = `We lost to the ${other} ${score}:(`
       console.log('losers')
       //change image here
      }
 
   })})
+
+// get the record of the canucks
+const canucksRecord = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23/stats')
+.then(({data}) => {
+  console.log(data)
+  let trueRecord = data.stats[0].splits[0].stat.wins + '-' + data.stats[0].splits[0].stat.losses + '-' + data.stats[0].splits[0].stat.ot
+  record.innerText = `${trueRecord}`
+})
 
 const roster = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23/roster')
 
