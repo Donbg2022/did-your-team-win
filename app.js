@@ -35,7 +35,7 @@ const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?ex
     else if (data.teams.away.team.name === 'Vancouver Canucks' && data.teams.home.teamStats.teamSkaterStats.goals > data.teams.away.teamStats.teamSkaterStats.goals){
       let other = data.teams.home.team.name
       let score = data.teams.home.teamStats.teamSkaterStats.goals + '-' +  data.teams.away.teamStats.teamSkaterStats.goals
-      winOrLossText.innerText = `We lost to the ${other} ${score}:(`
+      winOrLossText.innerText = `We lost to the ${other} ${score} :(`
       console.log('losers')
 
       mainImg.src = 'lose.jpg'
@@ -43,7 +43,7 @@ const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?ex
      else if (data.teams.home.team.name === 'Vancouver Canucks' && data.teams.away.teamStats.teamSkaterStats.goals > data.teams.home.teamStats.teamSkaterStats.goals) {
       let other = data.teams.away.team.name
       let score = data.teams.away.teamStats.teamSkaterStats.goals + '-' +  data.teams.home.teamStats.teamSkaterStats.goals
-      winOrLossText.innerText = `We lost to the ${other} ${score}:(`
+      winOrLossText.innerText = `We lost to the ${other} ${score} :(`
       console.log('losers')
       mainImg.src = 'lose.jpg'
 
