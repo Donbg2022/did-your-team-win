@@ -1,15 +1,12 @@
-//api fetch to get game boxscore 
+// sets variables to compare later to determine winner
   let nucksGoals = 0
   let other = 0
   const mainImg = document.querySelector('#mainimg')
   const winOrLossText = document.querySelector('#weWL')
 
 
-  //function to determine the winner of most previous game
-
-
-
-
+//axios get request to get thelates game id
+//use game id to make a new axios request to get the goals for the game
 
 const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?expand=team.schedule.previous')
 .then((res) =>{
@@ -19,33 +16,37 @@ const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?ex
   const nhlStats = axios.get(nhlGameId)
   .then(({data})=> {
     if (data.teams.away.team.name === 'Vancouver Canucks' && data.teams.home.teamStats.teamSkaterStats.goals < data.teams.away.teamStats.teamSkaterStats.goals){
+      //selects opposite team to add text displaying who won and by how much
       let other = data.teams.home.team.name
       let score = data.teams.away.teamStats.teamSkaterStats.goals + '-' +  data.teams.home.teamStats.teamSkaterStats.goals
       winOrLossText.innerText = `We beat the ${other} ${score} !!!!`
-      console.log('winnners')
-      //make this a happy photo
-      // mainImg.src = 'lumberjack.png'
+
+      //make this a winning photo
+      mainImg.src = 'win.jpg'
     }else if (data.teams.home.team.name === 'Vancouver Canucks' && data.teams.away.teamStats.teamSkaterStats.goals < data.teams.home.teamStats.teamSkaterStats.goals){
       let other = data.teams.away.team.name
       let score = data.teams.home.teamStats.teamSkaterStats.goals + '-' +  data.teams.away.teamStats.teamSkaterStats.goals
       winOrLossText.innerText = `We beat the ${other} ${score} !!!!`
-      console.log('winnners')
-      //make this a happy photo
-      // mainImg.src = 'lumberjack.png'
+
+      //make this a winning photo
+      mainImg.src = 'win.jpg'
     }
+    //add a if statement for the cases where canucks lose
     else if (data.teams.away.team.name === 'Vancouver Canucks' && data.teams.home.teamStats.teamSkaterStats.goals > data.teams.away.teamStats.teamSkaterStats.goals){
       let other = data.teams.home.team.name
       let score = data.teams.home.teamStats.teamSkaterStats.goals + '-' +  data.teams.away.teamStats.teamSkaterStats.goals
       winOrLossText.innerText = `We lost to the ${other} ${score}:(`
       console.log('losers')
-      //change image here
+
+      mainImg.src = 'lose.jpg'
      }
      else if (data.teams.home.team.name === 'Vancouver Canucks' && data.teams.away.teamStats.teamSkaterStats.goals > data.teams.home.teamStats.teamSkaterStats.goals) {
       let other = data.teams.away.team.name
       let score = data.teams.away.teamStats.teamSkaterStats.goals + '-' +  data.teams.home.teamStats.teamSkaterStats.goals
       winOrLossText.innerText = `We lost to the ${other} ${score}:(`
       console.log('losers')
-      //change image here
+      mainImg.src = 'lose.jpg'
+
      }
 
   })})
@@ -54,15 +55,11 @@ const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?ex
 const canucksRecord = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23/stats')
 .then(({data}) => {
   let trueRecord = data.stats[0].splits[0].stat.wins + '-' + data.stats[0].splits[0].stat.losses + '-' + data.stats[0].splits[0].stat.ot
+  //add the record to a empty div to display at the press of the win button
   record.innerText = `Record: ${trueRecord}`
+
 })
-
-
-
-//adding reacctivity to the navbar
-const burger = document.querySelector('#burger')
-
-
+//win or lose button which displays the correct photo and text determining the winner
 const btn = document.querySelector('#winorlosebtn');
 const record = document.querySelector('#record')
 btn.addEventListener('click', function(){
