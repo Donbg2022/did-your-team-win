@@ -1,7 +1,7 @@
 import { mainImg, winOrLossText } from './winOrLose.js'
 
 
-const btn = document.querySelector('#winorlosebtn');
+const btn = document.querySelector('#buttons');
 const record = document.querySelector('#record')
 const displayImg = () => {
   mainImg.style.display = 'block'
