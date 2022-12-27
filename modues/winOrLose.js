@@ -48,5 +48,5 @@ const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?ex
      }
 
   })})
-  
-  export default { gameIdLocater }
+
+  export { gameIdLocater, mainImg, winOrLossText }
