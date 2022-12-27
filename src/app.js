@@ -29,8 +29,9 @@ const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?ex
       //selects opposite team to add text displaying who won and by how much
       let score = awayGoals + '-' +  homeGoals
       winOrLossText.innerText = `We beat the ${home} ${score} !!!!`
+      console.log(data)
       // display this photo on a win
-      mainImg.src = 'win.jpg'
+      mainImg.src = './images/win.jpg'
 
 
     }else if (home === 'Vancouver Canucks' && awayGoals < homeGoals){
@@ -39,7 +40,7 @@ const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?ex
       winOrLossText.innerText = `We beat the ${away} ${score} !!!!`
 
       // display this photo on a win
-      mainImg.src = 'win.jpg'
+      mainImg.src = './images/win.jpg'
     }
     //add a if statement for the cases where canucks lose
     else if (away === 'Vancouver Canucks' && homeGoals > awayGoals){
@@ -47,14 +48,14 @@ const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?ex
       let score = homeGoals + '-' +  awayGoals
       winOrLossText.innerText = `We lost to the ${home} ${score} :(`
 
-      mainImg.src = 'lose.jpg'
+      mainImg.src = './images/lose.jpg'
 
      }
      else if (home === 'Vancouver Canucks' && awayGoals > homeGoals) {
       let score = awayGoals + '-' +  homeGoals
       winOrLossText.innerText = `We lost to the ${away} ${score} :(`
 
-      mainImg.src = 'lose.jpg'
+      mainImg.src = './images/lose.jpg'
 
      }
 
