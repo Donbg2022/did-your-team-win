@@ -13,5 +13,5 @@ const navBtn = document.querySelector('#navbtn')
 navBtn.addEventListener('click', colorInvert)
 
 //win or lose button which displays the correct photo and text determining the winner
-const btn = document.querySelector('#winorlosebtn');
+const btn = document.querySelector('#mainBtn');
 btn.addEventListener('click', displayImg) 

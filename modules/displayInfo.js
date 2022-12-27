@@ -15,7 +15,6 @@ const displayImg = () => {
 
 
 const body = document.querySelector('body')
-const mainBtn = document.querySelector('#mainBtn')
 let count = 1
 const colorInvert = () => {
   count++
