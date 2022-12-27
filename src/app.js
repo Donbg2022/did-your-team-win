@@ -1,65 +1,67 @@
+import gameIdLocater from '../modues/winOrLose.js'
+
+
 // sets variables to compare later to determine winner
-  let nucksGoals = 0
-  let other = 0
   const mainImg = document.querySelector('#mainimg')
   const winOrLossText = document.querySelector('#weWL')
 
 
-//axios get request to get thelates game id
-//use game id to make a new axios request to get the goals for the game
+// //axios get request to get thelates game id
+// //use game id to make a new axios request to get the goals for the game
 
-const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?expand=team.schedule.previous')
-.then((res) =>{
-  //getting the game id and using a template literal to insert into a new api get request which will get the last game played 
+// const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?expand=team.schedule.previous')
+// .then((res) =>{
+//   //getting the game id and using a template literal to insert into a new api get request which will get the last game played 
 
 
-  let id = res.data.teams[0].previousGameSchedule.dates[0].games[0].gamePk
-  let nhlGameId = `https://statsapi.web.nhl.com/api/v1/game/${id}/boxscore`;
-  const nhlStats = axios.get(nhlGameId)
+//   let id = res.data.teams[0].previousGameSchedule.dates[0].games[0].gamePk
+//   let nhlGameId = `https://statsapi.web.nhl.com/api/v1/game/${id}/boxscore`;
+
+//   const nhlStats = axios.get(nhlGameId)
 
   
-  .then(({data})=> {
-    const away = data.teams.away.team.name
-    const home = data.teams.home.team.name
+//   .then(({data})=> {
+//     const away = data.teams.away.team.name
+//     const home = data.teams.home.team.name
 
-    const homeGoals = data.teams.home.teamStats.teamSkaterStats.goals
-    const awayGoals = data.teams.away.teamStats.teamSkaterStats.goals
+//     const homeGoals = data.teams.home.teamStats.teamSkaterStats.goals
+//     const awayGoals = data.teams.away.teamStats.teamSkaterStats.goals
 
-    if (away === 'Vancouver Canucks' &&  homeGoals < awayGoals){
-      //selects opposite team to add text displaying who won and by how much
-      let score = awayGoals + '-' +  homeGoals
-      winOrLossText.innerText = `We beat the ${home} ${score} !!!!`
-      console.log(data)
-      // display this photo on a win
-      mainImg.src = './images/win.jpg'
+//     if (away === 'Vancouver Canucks' &&  homeGoals < awayGoals){
+//       //selects opposite team to add text displaying who won and by how much
+//       let score = awayGoals + '-' +  homeGoals
+//       winOrLossText.innerText = `We beat the ${home} ${score} !!!!`
+//       console.log(data)
+//       // display this photo on a win
+//       mainImg.src = './images/win.jpg'
 
 
-    }else if (home === 'Vancouver Canucks' && awayGoals < homeGoals){
+//     }else if (home === 'Vancouver Canucks' && awayGoals < homeGoals){
 
-      let score = home + '-' +  away
-      winOrLossText.innerText = `We beat the ${away} ${score} !!!!`
+//       let score = home + '-' +  away
+//       winOrLossText.innerText = `We beat the ${away} ${score} !!!!`
 
-      // display this photo on a win
-      mainImg.src = './images/win.jpg'
-    }
-    //add a if statement for the cases where canucks lose
-    else if (away === 'Vancouver Canucks' && homeGoals > awayGoals){
+//       // display this photo on a win
+//       mainImg.src = './images/win.jpg'
+//     }
+//     //add a if statement for the cases where canucks lose
+//     else if (away === 'Vancouver Canucks' && homeGoals > awayGoals){
       
-      let score = homeGoals + '-' +  awayGoals
-      winOrLossText.innerText = `We lost to the ${home} ${score} :(`
+//       let score = homeGoals + '-' +  awayGoals
+//       winOrLossText.innerText = `We lost to the ${home} ${score} :(`
 
-      mainImg.src = './images/lose.jpg'
+//       mainImg.src = './images/lose.jpg'
 
-     }
-     else if (home === 'Vancouver Canucks' && awayGoals > homeGoals) {
-      let score = awayGoals + '-' +  homeGoals
-      winOrLossText.innerText = `We lost to the ${away} ${score} :(`
+//      }
+//      else if (home === 'Vancouver Canucks' && awayGoals > homeGoals) {
+//       let score = awayGoals + '-' +  homeGoals
+//       winOrLossText.innerText = `We lost to the ${away} ${score} :(`
 
-      mainImg.src = './images/lose.jpg'
+//       mainImg.src = './images/lose.jpg'
 
-     }
+//      }
 
-  })})
+//   })})
 
 // get the record of the canucks
 const canucksRecord = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23/stats')
