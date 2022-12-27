@@ -1,6 +1,7 @@
 import { mainImg, winOrLossText } from './winOrLose.js'
 
 
+//win or loss photo and button display
 const btn = document.querySelector('#buttons');
 const record = document.querySelector('#record')
 const displayImg = () => {
@@ -11,9 +12,6 @@ const displayImg = () => {
 }
 
 //change color scheme with navbar button click
-
-
-
 const body = document.querySelector('body')
 let count = 1
 const colorInvert = () => {
@@ -28,4 +26,14 @@ const colorInvert = () => {
   }
 }
 
-export { displayImg, colorInvert }
+// next game display
+const nextGameText = document.querySelector('#next-game')
+const displayNextGame = () => {
+  btn.style.display = 'none'
+  record.style.display = 'block'
+  winOrLossText.style.display = 'block'
+  nextGameText.style.display = 'block'
+
+}
+
+export { displayImg, colorInvert, displayNextGame }

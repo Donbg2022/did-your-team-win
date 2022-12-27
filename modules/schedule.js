@@ -8,10 +8,10 @@ const statType = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?expand=
   const gameDate = new Date().toDateString(data.data.teams[0].nextGameSchedule.dates[0].games[0].gameDate)
   
   if (homeTeam === 'Vancouver Canucks'){
-      document.querySelector('#next-game').innerText = `The canucks play at home against ${homeTeam} on ${gameDate}`
-      
+      document.querySelector('#next-game').innerText = `Next game the canucks play at home against ${awayTeam} on ${gameDate}`
+
   }else if (awayTeam === 'Vancouver Canucks'){
-    document.querySelector('#next-game').innerText = `The canucks play on the road against ${homeTeam} on ${gameDate}`
+    document.querySelector('#next-game').innerText = `Next game the canucks play on the road against ${homeTeam} on ${gameDate}`
 }
 })
 

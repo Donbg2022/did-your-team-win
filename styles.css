@@ -70,7 +70,7 @@ nav div{
   font-weight: 600;
   font-size: larger;
 }
-#weWL{
+#weWL, #next-game{
   display: none;
   text-align: center;
   padding: 2rem;
@@ -99,7 +99,3 @@ background-color: rgb(10,134,61);
 }
 
 
-/* schedule */
-/* #next-game{
-  display: none;
-} */
