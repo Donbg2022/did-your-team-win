@@ -6,7 +6,7 @@ const btn = document.querySelector('#buttons');
 const record = document.querySelector('#record')
 const displayImg = () => {
   mainImg.style.display = 'block'
-  btn.style.display = 'none'
+  mainBtn.style.display = 'none'
   record.style.display = 'block'
   winOrLossText.style.display = 'block'
 }
