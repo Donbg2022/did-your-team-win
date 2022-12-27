@@ -1,6 +1,7 @@
 import { gameIdLocater, mainImg, winOrLossText } from '../modules/winOrLose.js'
 import canucksRecord from '../modules/record.js'
 import { displayImg, colorInvert } from '../modules/displayInfo.js'
+import statType from '../modules/schedule.js'
 
 
 //imported gameIdLocater which determines winner of the last played cancuks game
