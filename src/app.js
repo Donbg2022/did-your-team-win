@@ -9,8 +9,8 @@ import { displayImg, colorInvert } from '../modules/displayInfo.js'
 
 
 //logic to change display colors onclick
-const navbtn = document.querySelector('#navbtn')
-navbtn.addEventListener('click', colorInvert)
+const navBtn = document.querySelector('#navbtn')
+navBtn.addEventListener('click', colorInvert)
 
 //win or lose button which displays the correct photo and text determining the winner
 const btn = document.querySelector('#winorlosebtn');
