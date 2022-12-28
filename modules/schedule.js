@@ -12,7 +12,7 @@ async function statType(){
       document.querySelector('#next-game').innerHTML =`<p>Next game the canucks play at home against the <span style="background-color: ${backColor}; padding: 0 .5rem">${awayTeam}</span> on <span style="background-color: ${backColor}; padding: 0 .5rem">${gameDate}</span></p>`
 
   }else if (awayTeam === 'Vancouver Canucks'){
-    document.querySelector('#next-game').innerText = `Next game the canucks play on the road against the ${homeTeam} on ${gameDate}`
+    document.querySelector('#next-game').innerHTML = `<p>Next game the canucks play on the road against the <span style="background-color: ${backColor}; padding: 0 .5rem">${homeTeam}</span> on <span style="background-color: ${backColor}; padding: 0 .5rem">${gameDate}</span></p>`
 }
 }
 
