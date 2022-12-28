@@ -8,6 +8,7 @@ import statType from '../modules/schedule.js'
 
 //imported canucksRecord which uses axios to determine the record of the canucks
 
+//call statType to load get request straight away
 statType()
 
 //logic to change display colors onclick
