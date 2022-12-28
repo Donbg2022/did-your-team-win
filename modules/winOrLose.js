@@ -27,8 +27,8 @@ const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?ex
 
 
     }else if (home === 'Vancouver Canucks' && awayGoals < homeGoals){
-      let score = home + '-' +  away
-      winOrLossText.innerText = `Last game we beat the ${home} ${score} !!!!`
+      let score = homeGoals + '-' +  awayGoals
+      winOrLossText.innerText = `Last game we beat the ${away} ${score} !!!!`
       // display this photo on a win
       mainImg.src = './images/win.jpg'
     
