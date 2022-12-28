@@ -1,3 +1,4 @@
+import statType from './schedule.js';
 import { mainImg, winOrLossText } from './winOrLose.js'
 
 
@@ -27,6 +28,7 @@ const colorInvert = () => {
   nextGameBtn.style.backgroundColor = 'rgb(10,134,61)'
   navbtn.style.backgroundColor = 'rgb(10,134,61)'
   backColor = 'rgb(10,134,61)'
+  statType()
   
   if (count % 2 !== 0){
     body.style.backgroundColor = 'rgb(10,134,61)'
