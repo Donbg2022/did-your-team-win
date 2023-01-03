@@ -1,9 +1,8 @@
-
-
+//define root variable to be able to update css variables 
 let root= document.querySelector(':root')
 
 
-
+//object of teams colors and a nav image to update page theme based on users fave team
 let teams = {
   Anaheim: { 
     primary: '#b5985a',
@@ -168,17 +167,26 @@ let teams = {
   }
 
 
+  //dropdown selector to choose fave team 
+  const formBtn = document.querySelector('.form-btn')
+  formBtn.addEventListener('click', teamSelect)
+  
+  //function to get the value of the dropdown menu
+  //also calls colorChanger function which updates css variables to change theme of page
 const teamSelectMenu = document.querySelector('#team-names')
 function teamSelect(e) {
   e.preventDefault()
-  console.log(teamSelectMenu.value)
   colorChanger()
 }
 
+const navImg = document.querySelector('#nav-img')
+//updates css variables based on team objecct
+console.log(teamSelectMenu.value)
 function colorChanger(){
   root.style.setProperty('--primary-color', teams[teamSelectMenu.value].primary)
   root.style.setProperty('--secondary-color', teams[teamSelectMenu.value].secondary)
   root.style.setProperty('--alternate-color', teams[teamSelectMenu.value].alternate)
+  navImg.src = `./images/logos/${teamSelectMenu.value}.png`
 }
 
 

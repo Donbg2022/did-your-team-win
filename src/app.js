@@ -4,8 +4,6 @@ import { displayImg, colorInvert, displayNextGame, nextGameBtn } from '../module
 import statType from '../modules/schedule.js'
 import {teams, root, teamSelect}from '../modules/teamColors.js'
 
-const formBtn = document.querySelector('.form-btn')
-formBtn.addEventListener('click', teamSelect)
 
 //imported gameIdLocater which determines winner of the last played cancuks game
 
