@@ -1,6 +1,7 @@
 :root{
   --primary-color: rgb(4,28,44);
   --secondary-color: rgb(10,134,61);
+  --alternate-color: rgb(0, 0, 0);
 }
 .newTeam{
 
@@ -38,20 +39,20 @@ nav img{
 nav button{
   margin: 30px 10px 30px 30px;
   width: 8rem;
-  color: white;
-  background-color: rgb(4,28,44);
-  border: 1px solid rgb(4,28,44);
-  box-shadow: 0 0 10px 0 rgb(12, 87, 137);
+  color: var(--alternate-color);
+  background-color: var(--secondary-color);
+  border: 1px solid var(--alternate-color);
+  box-shadow: 0 0 10px 0 var(--alternate-color);
   font-size: large;
 }
 nav button:active{
-  background-color:  rgb(10,134,61);
+  background-color:  var(--secondary-color);
 }
 
 nav div{
   font-size: xx-large;
   font-weight: 100;
-  color: rgb(4,28,44);
+  color: var(--primary-color);
   margin: 40px 30px 40px 30px;
   display: none;
 }
@@ -72,13 +73,13 @@ nav div{
 }
 #buttons button{
   padding: 2rem;
-  background-color: rgb(4,28,44);
-  color: white;
+  background-color: var(--secondary-color);
+  color: var(--alternate-color);
   border: none;
   
 }
 #buttons button:active{
-  background-color: rgb(10,134,61);
+  background-color: var(--secondary-color);
 }
 #record{
   display: none;
@@ -89,7 +90,7 @@ nav div{
   display: none;
   text-align: center;
   padding: 2rem;
-  color: white;
+  color: var(--alternate-color);
   font-weight: 600;
   font-size: larger;
 }
@@ -98,19 +99,19 @@ nav div{
 }
 #winbtn{
   padding: 1rem;
-  background-color: rgb(4,28,44);
-  color: white;
-  border: 1px solid rgb(4,28,44);
-  box-shadow: 0 0 10px 0 blue;
+  background-color: var(--primary-color);
+  color: var(--alternate-color);
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 10px 0 var(--alternate-color);
   margin-top: 10px;
 }
 #winbtn:active{
-background-color: rgb(10,134,61);
+background-color: var(--secondary-color);
 }
 #record{
   text-align: center;
   padding: 20px;
-  color: white;
+  color: var(--alternate-color);
 }
 
 

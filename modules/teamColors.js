@@ -179,7 +179,6 @@ function colorChanger(){
   root.style.setProperty('--primary-color', teams[teamSelectMenu.value].primary)
   root.style.setProperty('--secondary-color', teams[teamSelectMenu.value].secondary)
   root.style.setProperty('--alternate-color', teams[teamSelectMenu.value].alternate)
-
 }
 
 
