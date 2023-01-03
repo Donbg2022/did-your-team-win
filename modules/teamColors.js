@@ -182,7 +182,6 @@ function teamSelect(e) {
 
 const navImg = document.querySelector('#nav-img')
 //updates css variables based on team objecct
-console.log(teamSelectMenu.value)
 function colorChanger(){
   root.style.setProperty('--primary-color', teams[teamSelectMenu.value].primary)
   root.style.setProperty('--secondary-color', teams[teamSelectMenu.value].secondary)
