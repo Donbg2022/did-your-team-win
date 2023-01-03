@@ -1,3 +1,5 @@
+import { teamSelectMenu }from './teamColors.js'
+
 const winOrLossText = document.querySelector('#weWL')
 const mainImg = document.querySelector('#mainimg')
 
@@ -18,7 +20,7 @@ const gameIdLocater = axios.get('https://statsapi.web.nhl.com/api/v1/teams/23?ex
     const homeGoals = data.teams.home.teamStats.teamSkaterStats.goals
     const awayGoals = data.teams.away.teamStats.teamSkaterStats.goals
 
-    if (away === 'Vancouver Canucks' &&  homeGoals < awayGoals){
+    if (away === `${teamSelectMenu.value}` &&  homeGoals < awayGoals){
       //selects opposite team to add text displaying who won and by how much
       let score = awayGoals + '-' +  homeGoals
       winOrLossText.innerText = `Last game we beat the ${home} ${score} !!!!`

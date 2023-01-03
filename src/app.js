@@ -1,11 +1,13 @@
 import { gameIdLocater, mainImg, winOrLossText } from '../modules/winOrLose.js'
-import canucksRecord from '../modules/record.js'
+import teamRecord from '../modules/record.js'
 import { displayImg, colorInvert, displayNextGame, nextGameBtn } from '../modules/displayInfo.js'
 import statType from '../modules/schedule.js'
-import {teams, root, teamSelect}from '../modules/teamColors.js'
+import {teams, root, teamSelectMenu}from '../modules/teamColors.js'
+import {teamId}from '../modules/teamId.js'
 
-const formBtn = document.querySelector('.form-btn')
-formBtn.addEventListener('click', teamSelect)
+
+teamId()
+
 
 //imported gameIdLocater which determines winner of the last played cancuks game
 

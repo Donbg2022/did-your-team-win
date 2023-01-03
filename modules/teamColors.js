@@ -1,173 +1,212 @@
+import { teamId } from "./teamId.js"
 
-
+//define root variable to be able to update css variables 
 let root= document.querySelector(':root')
 
 
-
+//object of teams colors and a nav image to update page theme based on users fave team
 let teams = {
   Anaheim: { 
     primary: '#b5985a',
     secondary: '#111111',
-    alternate: '#f95602'
+    alternate: '#f95602',
+    teamName: 'Anaheim Ducks'
     },
   Arizona: {
     primary: '#8c2633',
     secondary: '#e2d6b5',
-    alternate: '#111111'
+    alternate: '#111111',
+    teamName: 'Arizona Coyotes'
   },
   Boston: {
     primary: '#111111',
     secondary: '#fcb514',
-    alternate: '#fff'
+    alternate: '#fff',
+    teamName: 'Boston Bruins'
   },
   Buffalo: {
     primary: '#002654',
     secondary: '#fcb514',
-    alternate: '#adafaa'
+    alternate: '#adafaa',
+    teamName: 'Buffalo Sabres'
   },
   Calgary: {
     primary: '#ce1126',
     secondary: '#f3bc52',
-    alternate: '#111111'
+    alternate: '#111111',
+    teamName: 'Calgary Flames'
   },
   Carolina: {
     primary: '#ce0000',
     secondary: '#111111',
-    alternate: '#a2a9ad'
+    alternate: '#a2a9ad',
+    teamName: 'Carolina Hurricanes'
   },
   Chicago: {
     primary: 'cf0a2c#',
     secondary: '#ffd100',
-    alternate: '#000000'
+    alternate: '#000000',
+    teamName: 'Chicago Blackhawks'
   },
   Colorado: {
     primary: '#6f263d',
     secondary: '#236192',
-    alternate: '#a2aaad'
+    alternate: '#a2aaad',
+    teamName: 'Colorado Avalanche'
   },
   Columbus: {
     primary: '#002654',
     secondary: '#ce1126',
-    alternate: '#a4a9ad'
+    alternate: '#a4a9ad',
+    teamName: 'Columbus Blue Jackets'
   },
   Dallas: {
     primary: '#006847',
     secondary: '#111111',
-    alternate: '#8f8f8c'
+    alternate: '#8f8f8c',
+    teamName: 'Dallas Stars'
   },
   Detroit: {
     primary: '#ce1126',
     secondary: '#fff',
-    alternate: '#ce1126'
+    alternate: '#ce1126',
+    teamName: 'Detroit Red Wings'
   },
   Edmonton: {
     primary: '#041e41',
     secondary: '#ff4c00',
-    alternate: '#fff'
+    alternate: '#fff',
+    teamName: 'Edmonton Oilers'
   },
   Florida: {
     primary: '#041e42',
     secondary: '#b9975b',
-    alternate: '#c8102e'
+    alternate: '#c8102e',
+    teamName: 'Florida Panthers'
   },
   LA: {
     primary: '#111111',
     secondary: '#acaea9',
-    alternate: '#fff'
+    alternate: '#fff',
+    teamName: 'Los Angeles Kings'
   },
   Minnesota: {
     primary: '#024930',
     secondary: '#af1e24',
-    alternate: '#edaa00'
+    alternate: '#edaa00',
+    teamName: 'Minnesota Wild'
   },
   Montreal: {
     primary: '#af1e2d',
     secondary: '#192168',
-    alternate: '#fff'
+    alternate: '#fff',
+    teamName: 'Montreal Canadiens'
   },
   Nashville: {
     primary: '#041e42',
     secondary: '#ffb81c',
-    alternate: '#fff'
+    alternate: '#fff',
+    teamName: 'Nashville Predators'
   },
   NJ: {
     primary: '#ce1126',
     secondary: '#111111',
-    alternate: '#fff'
+    alternate: '#fff',
+    teamName: 'New Jersey Devils'
   },
   NYI: {
     primary: '#00539b',
     secondary: '#f47d30',
-    alternate: '#fff'
+    alternate: '#fff',
+    teamName: 'New York Islanders'
   },
   NYR: {
     primary: '#0038a8',
     secondary: '#ce1126',
-    alternate: '#fff'
+    alternate: '#fff',
+    teamName: 'New York Rangers'
   },
   Ottawa: {
     primary: '#bf910c',
     secondary: '#ce1126',
-    alternate: '#111111'
+    alternate: '#111111',
+    teamName: 'Ottawa Senators'
   },
   Philadelphia: {
     primary: '#111111',
-    secondary: '#f4902',
-    alternate: '#fff'
+    secondary: '#f74902',
+    alternate: '#fff',
+    teamName: 'Philidelphia Flyers'
   },
   Pittsburgh: {
     primary: '#black',
     secondary: '#fcb514',
-    alternate: '#fff'
+    alternate: '#fff',
+    teamName: 'Pittsburgh Penguins'
   },
-  SJ: {
+  SanJose: {
     primary: '#006d75',
     secondary: '#ea7200',
-    alternate: '#111111'
+    alternate: '#111111',
+    teamName: 'San Jose Sharks'
   },
   Seattle: {
     primary: '#001628',
     secondary: '#99D9D9',
-    alternate: '#68A2B9'
+    alternate: '#68A2B9',
+    teamName: 'Seattle Kraken'
   },
-  Stlouis: {
+  StLouis: {
     primary: '#002654',
     secondary: '#fcb514',
-    alternate: '#002f87'
+    alternate: '#002f87',
+    teamName: 'St louis Blues'
   },
   Tampa: {
     primary: '#002868',
     secondary: '#fff',
-    alternate: '#00205b'
+    alternate: '#00205b',
+    teamName: 'Tampa Bay Lightning<'
   },
   Toronto: {
     primary: '#000205b',
     secondary: '#white',
-    alternate: '#003e7e'
+    alternate: '#003e7e',
+    teamName: 'Toronto Maple Leafs'
   },
   Vancouver: {
     primary: '#001f5b',
     secondary: '#008852',
-    alternate: '#99999a'
+    alternate: '#99999a',
+    teamName: 'Vancouver Canucks'
   },
   Vegas: {
     primary: '#b4975a',
     secondary: '#333f42',
-    alternate: '#fff'
+    alternate: '#fff',
+    teamName: 'Las Vegas Golden Knights'
   },
   Washington: {
     primary: '#041e41',
     secondary: '#cf0a2c',
     alternate: '#fff',
+    teamName: 'Washington Capitals'
   },
   Winnipeg: {
     primary: '#041e41',
     secondary: '#ac162c',
-    alternate: '#7b303e'
+    alternate: '#7b303e',
+    teamName: 'Winnipeg Jets'
   }
   }
 
 
+  //dropdown selector to choose fave team 
+  const formBtn = document.querySelector('.form-btn')
+  formBtn.addEventListener('click', teamSelect)
+  
+  //function to get the value of the dropdown menu
+  //also calls colorChanger function which updates css variables to change theme of page
 const teamSelectMenu = document.querySelector('#team-names')
 function teamSelect(e) {
   e.preventDefault()
@@ -175,12 +214,15 @@ function teamSelect(e) {
   colorChanger()
 }
 
+const navImg = document.querySelector('#nav-img')
+//updates css variables based on team objecct
 function colorChanger(){
   root.style.setProperty('--primary-color', teams[teamSelectMenu.value].primary)
   root.style.setProperty('--secondary-color', teams[teamSelectMenu.value].secondary)
   root.style.setProperty('--alternate-color', teams[teamSelectMenu.value].alternate)
-
+  navImg.src = `./images/logos/${teamSelectMenu.value}.png`
+  teamId()
 }
 
 
-export {root, teams, teamSelect}
+export {root, teams, teamSelectMenu}
