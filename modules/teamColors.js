@@ -111,7 +111,7 @@ let teams = {
   },
   Philadelphia: {
     primary: '#111111',
-    secondary: '#f4902',
+    secondary: '#f74902',
     alternate: '#fff'
   },
   Pittsburgh: {
@@ -119,7 +119,7 @@ let teams = {
     secondary: '#fcb514',
     alternate: '#fff'
   },
-  SJ: {
+  SanJose: {
     primary: '#006d75',
     secondary: '#ea7200',
     alternate: '#111111'
@@ -129,7 +129,7 @@ let teams = {
     secondary: '#99D9D9',
     alternate: '#68A2B9'
   },
-  Stlouis: {
+  StLouis: {
     primary: '#002654',
     secondary: '#fcb514',
     alternate: '#002f87'
@@ -176,6 +176,7 @@ let teams = {
 const teamSelectMenu = document.querySelector('#team-names')
 function teamSelect(e) {
   e.preventDefault()
+  console.log(teamSelectMenu.value)
   colorChanger()
 }
 
