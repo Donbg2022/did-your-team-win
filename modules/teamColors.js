@@ -208,6 +208,7 @@ let teams = {
   
   //function to get the value of the dropdown menu
   //also calls colorChanger function which updates css variables to change theme of page
+  //teamId is also called which updates the axios request to update selected team name and return correct one
 const teamSelectMenu = document.querySelector('#team-names')
 function teamSelect(e) {
   e.preventDefault()
@@ -216,7 +217,7 @@ function teamSelect(e) {
 }
 
 const navImg = document.querySelector('#nav-img')
-//updates css variables based on team objecct
+//updates css variables based on the 'team' objecct
 function colorChanger(){
   root.style.setProperty('--primary-color', teams[teamSelectMenu.value].primary)
   root.style.setProperty('--secondary-color', teams[teamSelectMenu.value].secondary)

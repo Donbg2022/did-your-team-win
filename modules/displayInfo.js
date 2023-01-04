@@ -9,7 +9,7 @@ import { mainImg, winOrLossText, winOrLose } from './winOrLose.js';
 
 
 
-//win or loss photo and button display
+// buttons to determine which photo to display and to hide button once it was pressed
 const btn = document.querySelector('#buttons');
 const record = document.querySelector('#record')
 const displayImg = () => {
@@ -50,7 +50,7 @@ const colorInvert = () => {
 
 
 
-// next game display
+// displays information regarding the next game that will be played by selected team
 const nextGameText = document.querySelector('#next-game')
 const displayNextGame = () => {
   btn.style.display = 'none'
