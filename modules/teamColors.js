@@ -1,4 +1,5 @@
 import { teamId } from "./teamId.js"
+import { winOrLose } from './winOrLose.js';
 
 //define root variable to be able to update css variables 
 let root= document.querySelector(':root')
@@ -210,8 +211,8 @@ let teams = {
 const teamSelectMenu = document.querySelector('#team-names')
 function teamSelect(e) {
   e.preventDefault()
-  console.log(teamSelectMenu.value)
   colorChanger()
+  teamId()
 }
 
 const navImg = document.querySelector('#nav-img')
@@ -222,6 +223,7 @@ function colorChanger(){
   root.style.setProperty('--alternate-color', teams[teamSelectMenu.value].alternate)
   navImg.src = `./images/logos/${teamSelectMenu.value}.png`
   teamId()
+  winOrLose()
 }
 
 

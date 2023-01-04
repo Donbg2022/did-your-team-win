@@ -8,7 +8,6 @@ async function statType(){
   const awayTeam = data.data.teams[0].nextGameSchedule.dates[0].games[0].teams.away.team.name
   const gameDate = new Date(data.data.teams[0].nextGameSchedule.dates[0].games[0].gameDate).toDateString()
   
-  console.log(data.data.teams[0].nextGameSchedule.dates[0].games[0].gameDate)
   if (homeTeam === 'Vancouver Canucks'){
       document.querySelector('#next-game').innerHTML =`<p>Next game the canucks play at home against the <span style="background-color: ${backColor}; padding: 0 .5rem">${awayTeam}</span> on <span style="background-color: ${backColor}; padding: 0 .5rem">${gameDate}</span></p>`
 

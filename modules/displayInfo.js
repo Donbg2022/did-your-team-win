@@ -1,5 +1,6 @@
 import statType from './schedule.js';
-import { mainImg, winOrLossText } from './winOrLose.js'
+import { teamId } from './teamId.js';
+import { mainImg, winOrLossText, winOrLose } from './winOrLose.js';
 
 
 
@@ -16,6 +17,7 @@ const displayImg = () => {
   mainBtn.style.display = 'none'
   record.style.display = 'block'
   winOrLossText.style.display = 'block'
+  winOrLose()
 }
 
 //change color scheme with navbar button click 
