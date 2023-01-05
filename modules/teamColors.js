@@ -1,3 +1,4 @@
+import statType from "./schedule.js";
 import { teamId } from "./teamId.js"
 import { winOrLose } from './winOrLose.js';
 
@@ -216,6 +217,7 @@ function teamSelect(e) {
   colorChanger()
   teamId()
   winOrLose()
+  statType()
 
 }
 

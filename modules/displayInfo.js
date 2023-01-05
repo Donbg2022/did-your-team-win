@@ -1,6 +1,7 @@
-// import statType from './schedule.js';
+import statType from './schedule.js';
 import { teamId } from './teamId.js';
 import { mainImg, winOrLossText, winOrLose } from './winOrLose.js';
+import {teamRecord} from './record.js'
 
 
 
@@ -13,9 +14,11 @@ import { mainImg, winOrLossText, winOrLose } from './winOrLose.js';
 const btn = document.querySelector('#buttons');
 const record = document.querySelector('#record')
 const displayImg = () => {
+  winOrLose()
+  teamRecord()
   record.style.display = 'block'
   winOrLossText.style.display = 'block'
-  winOrLose()
+  
 }
 
 //change color scheme with navbar button click 
@@ -50,10 +53,10 @@ const colorInvert = () => {
 // displays information regarding the next game that will be played by selected team
 const nextGameText = document.querySelector('#next-game')
 const displayNextGame = () => {
-  btn.style.display = 'none'
   record.style.display = 'block'
   winOrLossText.style.display = 'block'
   nextGameText.style.display = 'block'
+  statType()
 
 }
 
