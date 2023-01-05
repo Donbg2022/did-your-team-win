@@ -1,4 +1,5 @@
 import { teamId } from "./teamId.js"
+import { winOrLose } from './winOrLose.js';
 
 //define root variable to be able to update css variables 
 let root= document.querySelector(':root')
@@ -69,7 +70,7 @@ let teams = {
   Detroit: {
     primary: '#ce1126',
     secondary: '#fff',
-    alternate: '#ce1126',
+    alternate: '#111111',
     teamName: 'Detroit Red Wings'
   },
   Edmonton: {
@@ -100,7 +101,7 @@ let teams = {
     primary: '#af1e2d',
     secondary: '#192168',
     alternate: '#fff',
-    teamName: 'Montreal Canadiens'
+    teamName: 'Montréal Canadiens'
   },
   Nashville: {
     primary: '#041e42',
@@ -136,10 +137,10 @@ let teams = {
     primary: '#111111',
     secondary: '#f74902',
     alternate: '#fff',
-    teamName: 'Philidelphia Flyers'
+    teamName: 'Philadelphia Flyers'
   },
   Pittsburgh: {
-    primary: '#black',
+    primary: '#111111',
     secondary: '#fcb514',
     alternate: '#fff',
     teamName: 'Pittsburgh Penguins'
@@ -160,13 +161,13 @@ let teams = {
     primary: '#002654',
     secondary: '#fcb514',
     alternate: '#002f87',
-    teamName: 'St louis Blues'
+    teamName: 'St. Louis Blues'
   },
   Tampa: {
     primary: '#002868',
     secondary: '#fff',
     alternate: '#00205b',
-    teamName: 'Tampa Bay Lightning<'
+    teamName: 'Tampa Bay Lightning'
   },
   Toronto: {
     primary: '#000205b',
@@ -184,7 +185,7 @@ let teams = {
     primary: '#b4975a',
     secondary: '#333f42',
     alternate: '#fff',
-    teamName: 'Las Vegas Golden Knights'
+    teamName: 'Vegas Golden Knights'
   },
   Washington: {
     primary: '#041e41',
@@ -207,21 +208,24 @@ let teams = {
   
   //function to get the value of the dropdown menu
   //also calls colorChanger function which updates css variables to change theme of page
+  //teamId is also called which updates the axios request to update selected team name and return correct one
 const teamSelectMenu = document.querySelector('#team-names')
 function teamSelect(e) {
-  e.preventDefault()
   console.log(teamSelectMenu.value)
+  e.preventDefault()
   colorChanger()
+  teamId()
+  winOrLose()
+
 }
 
 const navImg = document.querySelector('#nav-img')
-//updates css variables based on team objecct
+//updates css variables based on the 'team' objecct
 function colorChanger(){
   root.style.setProperty('--primary-color', teams[teamSelectMenu.value].primary)
   root.style.setProperty('--secondary-color', teams[teamSelectMenu.value].secondary)
   root.style.setProperty('--alternate-color', teams[teamSelectMenu.value].alternate)
   navImg.src = `./images/logos/${teamSelectMenu.value}.png`
-  teamId()
 }
 
 

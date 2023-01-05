@@ -1,5 +1,6 @@
-import statType from './schedule.js';
-import { mainImg, winOrLossText } from './winOrLose.js'
+// import statType from './schedule.js';
+import { teamId } from './teamId.js';
+import { mainImg, winOrLossText, winOrLose } from './winOrLose.js';
 
 
 
@@ -8,18 +9,16 @@ import { mainImg, winOrLossText } from './winOrLose.js'
 
 
 
-//win or loss photo and button display
+// buttons to determine which photo to display and to hide button once it was pressed
 const btn = document.querySelector('#buttons');
 const record = document.querySelector('#record')
 const displayImg = () => {
-  mainImg.style.display = 'block'
-  mainBtn.style.display = 'none'
   record.style.display = 'block'
   winOrLossText.style.display = 'block'
+  winOrLose()
 }
 
 //change color scheme with navbar button click 
-let backColor = 'rgb(4,28,44)'
 let count = 1
 
 const body = document.querySelector('body')
@@ -48,7 +47,7 @@ const colorInvert = () => {
 
 
 
-// next game display
+// displays information regarding the next game that will be played by selected team
 const nextGameText = document.querySelector('#next-game')
 const displayNextGame = () => {
   btn.style.display = 'none'
@@ -58,4 +57,4 @@ const displayNextGame = () => {
 
 }
 
-export { displayImg, colorInvert, displayNextGame, backColor, nextGameBtn}
+export { displayImg, colorInvert, displayNextGame, nextGameBtn}
