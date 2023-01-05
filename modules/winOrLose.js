@@ -44,7 +44,7 @@ async function winOrLose() {
      }
      else if (home === `${chosenTeamFullName}` && awayGoals > homeGoals) {
       let score = `${awayGoals} - ${homeGoals}`
-      winOrLossText.innerText = `Last game we lost to the ${away} ${score}(`
+      winOrLossText.innerText = `Last game we lost to the ${away} ${score}`
         
      }
      else if (awayGoals === homeGoals){

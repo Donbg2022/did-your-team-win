@@ -8,22 +8,17 @@ let chosenId = ''
 
 //async function that calls a list of teams with corresponding ID's
 //then runs a for loop over the array to check which ID should be used
-async function teamId(){
+async function getTeamId(){
   const chosenTeamId = await axios.get('https://statsapi.web.nhl.com/api/v1/teams')
-
 for (let i = 0; i < chosenTeamId.data.teams.length; i++) {
   if (chosenTeamId.data.teams[i].name === teams[teamSelectMenu.value].teamName){
      chosenId = chosenTeamId.data.teams[i].id
      chosenTeamFullName = chosenTeamId.data.teams[i].name
 }
+console.log(chosenId, chosenTeamFullName)
 }
 
 }
 
-export { teamId, chosenId, chosenTeamFullName}
-
-
-
-
-
+export { getTeamId, chosenId, chosenTeamFullName}
 

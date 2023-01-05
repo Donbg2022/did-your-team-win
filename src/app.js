@@ -1,10 +1,5 @@
 import {teamRecord} from '../modules/record.js'
 import {displayImg, displayNextGame, nextGameBtn } from '../modules/displayInfo.js'
-import {teamId}from '../modules/teamId.js'
-
-
-teamId()
-
 
 //imported gameIdLocater which determines winner of the last played cancuks game
 

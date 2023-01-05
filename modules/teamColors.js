@@ -1,5 +1,5 @@
 import statType from "./schedule.js";
-import { teamId } from "./teamId.js"
+import { getTeamId } from "./teamId.js"
 import { winOrLose } from './winOrLose.js';
 
 //define root variable to be able to update css variables 
@@ -213,16 +213,16 @@ let teams = {
 const teamSelectMenu = document.querySelector('#team-names')
 function teamSelect(e) {
   e.preventDefault()
-  colorChanger()
-  teamId()
-  winOrLose()
-  statType()
+  cssVarUpdate()
+  getTeamId()
+
+//rename functions
 
 }
 
 const navImg = document.querySelector('#nav-img')
 //updates css variables based on the 'team' objecct
-function colorChanger(){
+function cssVarUpdate(){
   root.style.setProperty('--primary-color', teams[teamSelectMenu.value].primary)
   root.style.setProperty('--secondary-color', teams[teamSelectMenu.value].secondary)
   root.style.setProperty('--alternate-color', teams[teamSelectMenu.value].alternate)
