@@ -1,4 +1,4 @@
-import statType from './schedule.js';
+// import statType from './schedule.js';
 import { teamId } from './teamId.js';
 import { mainImg, winOrLossText, winOrLose } from './winOrLose.js';
 
@@ -13,15 +13,12 @@ import { mainImg, winOrLossText, winOrLose } from './winOrLose.js';
 const btn = document.querySelector('#buttons');
 const record = document.querySelector('#record')
 const displayImg = () => {
-  mainImg.style.display = 'block'
-  mainBtn.style.display = 'none'
   record.style.display = 'block'
   winOrLossText.style.display = 'block'
   winOrLose()
 }
 
 //change color scheme with navbar button click 
-let backColor = 'rgb(4,28,44)'
 let count = 1
 
 const body = document.querySelector('body')
@@ -60,4 +57,4 @@ const displayNextGame = () => {
 
 }
 
-export { displayImg, colorInvert, displayNextGame, backColor, nextGameBtn}
+export { displayImg, colorInvert, displayNextGame, nextGameBtn}
