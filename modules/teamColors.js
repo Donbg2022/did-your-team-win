@@ -204,8 +204,8 @@ let teams = {
 
 
   //dropdown selector to choose fave team 
-  const formBtn = document.querySelector('.form-btn')
-  formBtn.addEventListener('click', teamSelect)
+  const dropdownSubmit = document.querySelector('.form-btn')
+  dropdownSubmit.addEventListener('click', teamSelect)
   
   //function to get the value of the dropdown menu
   //also calls colorChanger function which updates css variables to change theme of page
