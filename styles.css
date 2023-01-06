@@ -57,16 +57,21 @@ nav div{
   display: none;
 }
 
+/* dropdown */
+#team-names, .form-btn{
+  background-color: var(--secondary-color);
+}
+.form-btn{
+  padding: 0 .25rem;
+}
+.form{
+  text-align: center;
+  margin-top: 20px;
+}
+
 
   /* homepage Main photo */
 
-#mainimg{
-  max-width: 90%;
-  display: none;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5rem;
-}
 #buttons{
   text-align: center;
   margin-top: 6rem;
