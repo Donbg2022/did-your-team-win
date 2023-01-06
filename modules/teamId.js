@@ -15,7 +15,6 @@ for (let i = 0; i < chosenTeamId.data.teams.length; i++) {
      chosenId = chosenTeamId.data.teams[i].id
      chosenTeamFullName = chosenTeamId.data.teams[i].name
 }
-console.log(chosenId, chosenTeamFullName)
 }
 
 }

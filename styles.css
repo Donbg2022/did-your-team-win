@@ -3,9 +3,7 @@
   --secondary-color: rgb(10,134,61);
   --alternate-color: rgb(0, 0, 0);
 }
-.newTeam{
 
-}
 /* //find out how to cghange variable using js
 //make a object with all teams colors 
 create a module to change to those colors by updating the css variable to the correct color
@@ -60,6 +58,7 @@ nav div{
 /* dropdown */
 #team-names, .form-btn{
   background-color: var(--secondary-color);
+  color: var(--alternate-color);
 }
 .form-btn{
   padding: 0 .25rem;
