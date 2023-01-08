@@ -214,7 +214,6 @@ const teamSelectMenu = document.querySelector('#team-names')
 function teamSelect(e) {
   e.preventDefault()  
   document.querySelector('#buttons').style.display = 'block'
-  console.log('hel;lo')
   cssVarUpdate()
   getTeamId()
 
