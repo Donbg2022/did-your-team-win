@@ -74,6 +74,7 @@ nav div{
 #buttons{
   text-align: center;
   margin-top: 6rem;
+  display: none;
 }
 #buttons button{
   padding: 2rem;

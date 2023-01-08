@@ -212,7 +212,9 @@ let teams = {
   //teamId is also called which updates the axios request to update selected team name and return correct one
 const teamSelectMenu = document.querySelector('#team-names')
 function teamSelect(e) {
-  e.preventDefault()
+  e.preventDefault()  
+  document.querySelector('#buttons').style.display = 'block'
+  console.log('hel;lo')
   cssVarUpdate()
   getTeamId()
 
