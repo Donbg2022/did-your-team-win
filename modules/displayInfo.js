@@ -1,60 +1,28 @@
-// import statType from './schedule.js';
-import { teamId } from './teamId.js';
+import statType from './schedule.js';
 import { mainImg, winOrLossText, winOrLose } from './winOrLose.js';
-
-
-
-
-
-
+import {teamRecord} from './record.js'
 
 
 // buttons to determine which photo to display and to hide button once it was pressed
-const btn = document.querySelector('#buttons');
 const record = document.querySelector('#record')
 const displayImg = () => {
+  winOrLose()
+  teamRecord()
   record.style.display = 'block'
   winOrLossText.style.display = 'block'
-  winOrLose()
-}
-
-//change color scheme with navbar button click 
-let count = 1
-
-const body = document.querySelector('body')
-const nextGameBtn = document.querySelector('#scheduleBtn');
-
-
-const colorInvert = () => {
-
-  count++
-  body.style.backgroundColor = 'rgb(4,28,44)'
-  mainBtn.style.backgroundColor = 'rgb(10,134,61)'
-  nextGameBtn.style.backgroundColor = 'rgb(10,134,61)'
-  navbtn.style.backgroundColor = 'rgb(10,134,61)'
-  backColor = 'rgb(10,134,61)'
-  statType()
   
-  if (count % 2 !== 0){
-    body.style.backgroundColor = 'rgb(10,134,61)'
-    mainBtn.style.backgroundColor = 'rgb(4,28,44)'
-    nextGameBtn.style.backgroundColor = 'rgb(4,28,44)'
-    navbtn.style.backgroundColor = 'rgb(4,28,44)'
-    backColor = 'rgb(4,28,44)'
-  }
 }
-
-
 
 
 // displays information regarding the next game that will be played by selected team
+const nextGameBtn = document.querySelector('#scheduleBtn');
 const nextGameText = document.querySelector('#next-game')
 const displayNextGame = () => {
-  btn.style.display = 'none'
   record.style.display = 'block'
   winOrLossText.style.display = 'block'
   nextGameText.style.display = 'block'
+  statType()
 
 }
 
-export { displayImg, colorInvert, displayNextGame, nextGameBtn}
+export { displayImg, displayNextGame, nextGameBtn}

@@ -1,0 +1,28 @@
+{
+  "name": "did-the-canucks-win",
+  "version": "1.0.0",
+  "description": "static website made with JS CSS and HTML to check wether the canucks won or lost their last game https://didthecanuckswin.netlify.app/",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Donbg2022/did-the-canucks-win.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Donbg2022/did-the-canucks-win/issues"
+  },
+  "homepage": "https://github.com/Donbg2022/did-the-canucks-win#readme",
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "firebase": "^9.15.0",
+    "firebaseui": "^6.0.2"
+  }
+}

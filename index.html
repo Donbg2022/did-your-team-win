@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  
   <title>Did the Canucks win</title>
 </head>
 <body>
@@ -15,11 +15,8 @@
     <a href="index.html"><img id="nav-img" src="./images/logos/Vancouver.png" alt="company logo"></a>
     <button id="navbtn">Click me</button>
   </nav>
-
-
-
-
-  <form action="">
+  
+  <form class="form" action="">
   <select name="" id="team-names">
     <option value="Anaheim">Anaheim Ducks</option>
     <option value="Arizona">Arizona Coyotes</option>
@@ -55,19 +52,22 @@
     <option value="Winnipeg">Winnipeg Jets</option>
   </select>
 
-<button class="form-btn" type="submit">cluck</button>
+<button class="form-btn" type="submit">SUBMIT</button>
 
 </form>
 <!-- responsive navbar -->
 
-<!-- home page main image -->
-<div id="mainimgcontainer">
-  <img id="mainimg" src="./images/nucksMain.jpg" alt="">
-</div>
+
 
 <div id="weWL"></div>
 <div id="next-game"></div>
 <div id="record"></div>
+
+
+
+
+
+
 
 <div id="buttons">
   <button id="mainBtn">DID WE WIN OR LOSE?</button>
@@ -80,6 +80,6 @@
   </div>
 </section>
 <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-<script type="module" src="./src/app.js"></script>
+<script type="module" src="./dist/main.js"></script>
 </body>
 </html>

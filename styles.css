@@ -3,9 +3,7 @@
   --secondary-color: rgb(10,134,61);
   --alternate-color: rgb(0, 0, 0);
 }
-.newTeam{
 
-}
 /* //find out how to cghange variable using js
 //make a object with all teams colors 
 create a module to change to those colors by updating the css variable to the correct color
@@ -57,16 +55,22 @@ nav div{
   display: none;
 }
 
+/* dropdown */
+#team-names, .form-btn{
+  background-color: var(--secondary-color);
+  color: var(--alternate-color);
+}
+.form-btn{
+  padding: 0 .25rem;
+}
+.form{
+  text-align: center;
+  margin-top: 20px;
+}
+
 
   /* homepage Main photo */
 
-#mainimg{
-  max-width: 90%;
-  display: none;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5rem;
-}
 #buttons{
   text-align: center;
   margin-top: 6rem;

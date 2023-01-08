@@ -1,4 +1,5 @@
-import { teamId } from "./teamId.js"
+import statType from "./schedule.js";
+import { getTeamId } from "./teamId.js"
 import { winOrLose } from './winOrLose.js';
 
 //define root variable to be able to update css variables 
@@ -203,25 +204,25 @@ let teams = {
 
 
   //dropdown selector to choose fave team 
-  const formBtn = document.querySelector('.form-btn')
-  formBtn.addEventListener('click', teamSelect)
+  const dropdownSubmit = document.querySelector('.form-btn')
+  dropdownSubmit.addEventListener('click', teamSelect)
   
   //function to get the value of the dropdown menu
   //also calls colorChanger function which updates css variables to change theme of page
   //teamId is also called which updates the axios request to update selected team name and return correct one
 const teamSelectMenu = document.querySelector('#team-names')
 function teamSelect(e) {
-  console.log(teamSelectMenu.value)
   e.preventDefault()
-  colorChanger()
-  teamId()
-  winOrLose()
+  cssVarUpdate()
+  getTeamId()
+
+//rename functions
 
 }
 
 const navImg = document.querySelector('#nav-img')
 //updates css variables based on the 'team' objecct
-function colorChanger(){
+function cssVarUpdate(){
   root.style.setProperty('--primary-color', teams[teamSelectMenu.value].primary)
   root.style.setProperty('--secondary-color', teams[teamSelectMenu.value].secondary)
   root.style.setProperty('--alternate-color', teams[teamSelectMenu.value].alternate)
