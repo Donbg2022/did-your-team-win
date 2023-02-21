@@ -1,5 +1,5 @@
 import {teamRecord} from '../modules/record.js'
-import {displayImg, displayNextGame, nextGameBtn } from '../modules/displayInfo.js'
+import {displayNextGame, displayRecord, displayLastGame } from '../modules/displayInfo.js'
 
 //imported gameIdLocater which determines winner of the last played cancuks game
 
@@ -7,13 +7,14 @@ import {displayImg, displayNextGame, nextGameBtn } from '../modules/displayInfo.
 
 
 //win or lose button which displays the correct photo and text determining the winner
-const btn = document.querySelector('#mainBtn');
-btn.addEventListener('click', displayImg) 
+const lastGameBtn = document.querySelector('#lastGameBtn');
+lastGameBtn.addEventListener('click', displayLastGame) 
 
+const nextGameBtn = document.querySelector('#scheduleBtn');
 nextGameBtn.addEventListener('click', displayNextGame)
 
-
-
+const recordBtn = document.querySelector('#recordBtn')
+recordBtn.addEventListener('click', displayRecord)
 
 
 

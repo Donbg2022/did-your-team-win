@@ -1,6 +1,6 @@
 import { chosenId, chosenTeamFullName } from '../modules/teamId.js'
 
-const winOrLossText = document.querySelector('#weWL')
+const winOrLossText = document.querySelector('#lastGame')
 const mainImg = document.querySelector('#mainimg')
 
 //axios get request to get the game ID

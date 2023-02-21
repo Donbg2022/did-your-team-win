@@ -1,6 +1,6 @@
-import statType from "./schedule.js";
+
 import { getTeamId } from "./teamId.js"
-import { winOrLose } from './winOrLose.js';
+import { record, lastGame, nextGameText } from './displayInfo'
 
 //define root variable to be able to update css variables 
 let root= document.querySelector(':root')
@@ -28,8 +28,8 @@ let teams = {
   },
   Buffalo: {
     primary: '#002654',
-    secondary: '#fcb514',
-    alternate: '#adafaa',
+    secondary: '#grey',
+    alternate: '#fcb514',
     teamName: 'Buffalo Sabres'
   },
   Calgary: {
@@ -197,7 +197,7 @@ let teams = {
   Winnipeg: {
     primary: '#041e41',
     secondary: '#ac162c',
-    alternate: '#7b303e',
+    alternate: 'white',
     teamName: 'Winnipeg Jets'
   }
   }
@@ -213,9 +213,15 @@ let teams = {
 const teamSelectMenu = document.querySelector('#team-names')
 function teamSelect(e) {
   e.preventDefault()  
+
+  record.style.display = 'none'
+  nextGameText.style.display = 'none'
+  lastGame.style.display = 'none'
   document.querySelector('#buttons').style.display = 'block'
+  //update css for a new team
   cssVarUpdate()
   getTeamId()
+
 
 //rename functions
 

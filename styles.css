@@ -91,7 +91,7 @@ nav div{
   font-weight: 600;
   font-size: larger;
 }
-#weWL, #next-game{
+#lastGame, #next-game{
   display: none;
   text-align: center;
   padding: 2rem;
