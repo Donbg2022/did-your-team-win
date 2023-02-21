@@ -26,7 +26,7 @@ navBtn.addEventListener('click', () => {
     easterEggText.style.color = "var(--alternate-color)"
     easterEggText.style.textAlign = "center"
     document.querySelector('html').appendChild(easterEggText)
-    easterEggText.innerText = `good team choice, you are safe.... #GOCANUCKSGO`
+    easterEggText.innerText = `good choice, you're safe.... #GOCANUCKSGO`
   }else{
     console.log('hmmm')
     document.querySelector('html').removeChild(document.querySelector('body'))
