@@ -217,10 +217,13 @@ function teamSelect(e) {
   record.style.display = 'none'
   nextGameText.style.display = 'none'
   lastGame.style.display = 'none'
+  
   document.querySelector('#buttons').style.display = 'block'
   //update css for a new team
   cssVarUpdate()
   getTeamId()
+
+ 
 
 
 //rename functions
