@@ -14,21 +14,19 @@ for (let i = 0; i < chosenTeamId.data.teams.length; i++) {
   if (chosenTeamId.data.teams[i].name === teams[teamSelectMenu.value].teamName){
      chosenId = chosenTeamId.data.teams[i].id
      chosenTeamFullName = chosenTeamId.data.teams[i].name
-     
 }
 }
+
 const navBtn = document.querySelector('#navbtn')
 navBtn.addEventListener('click', () => {
   console.log(chosenTeamFullName)
   if(chosenTeamFullName === 'Vancouver Canucks'){
-    console.log('working')
     let easterEggText = document.querySelector('.easterEgg')
     easterEggText.style.color = "var(--alternate-color)"
     easterEggText.style.textAlign = "center"
     document.querySelector('html').appendChild(easterEggText)
     easterEggText.innerText = `good choice, you're safe.... #GOCANUCKSGO`
   }else{
-    console.log('hmmm')
     document.querySelector('html').removeChild(document.querySelector('body'))
     let easterEggText = document.createElement('h1')
     easterEggText.innerText = `Wrong team. The ${chosenTeamFullName} SUCK. You lost your website privileges #GOCANUCKSGO`

@@ -202,6 +202,11 @@ let teams = {
   }
   }
 
+  //onload choose canucks as team
+  document.querySelector("body").addEventListener("load", () => {
+
+  })
+
 
   //dropdown selector to choose fave team 
   const dropdownSubmit = document.querySelector('.form-btn')
@@ -221,11 +226,8 @@ function teamSelect(e) {
   document.querySelector('#buttons').style.display = 'block'
   //update css for a new team
   cssVarUpdate()
+  //get team ID from teamID file
   getTeamId()
-
- 
-
-
 //rename functions
 
 }
