@@ -1,19 +1,36 @@
-import { chosenId } from "./teamId.js"
-// get the record of the canucks
+import axios from "axios"
 
-async function teamRecord(){
-  let recordId = `https://statsapi.web.nhl.com/api/v1/teams/${chosenId}/stats`
-  
-  const data = await axios.get(recordId)
-  let wins = data.data.stats[0].splits[0].stat.wins;
-  let losses = data.data.stats[0].splits[0].stat.losses;
-  let ot = data.data.stats[0].splits[0].stat.ot;
+//declare variables for the teams wins, losses, otLosses
+let wins, losses, otLosses 
 
-  
-  let trueRecord = `${wins} - ${losses} - ${ot}`
-  //add the record to a empty div to display at the press of the win button
-  record.innerText = `Record: ${trueRecord}`
+//variable to insert data into html
+const record = document.querySelector("#record") 
+
+//async function that gets the selected teams record and displays it
+async function getRecord(teamSelected){
+  //try catch block to catch any errors
+  try{
+      //awwait axios request to NHL API to get standings and stats
+    const standings = await axios.get("https://api-web.nhle.com/v1/standings/now") 
+
+    //loop through the API response to get the team that was chosen 
+    for(let i = 0; i < 32; i++){
+      //if the team selected matches the team of the current index execute following code
+      if( standings.data.standings[i].teamCommonName.default == teamSelected){
+        //assign values to pre-declared variables 
+        wins = standings.data.standings[i].wins
+        losses = standings.data.standings[i].losses
+        otLosses = standings.data.standings[i].otLosses
+        
+        //insert the variables into the html
+        record.innerHTML = `${wins} - ${losses} - ${otLosses}`
+      }
+    }
+  }catch(error){
+    console.log(error)
+  }
+
 
 }
 
-export {teamRecord}
+export {getRecord}

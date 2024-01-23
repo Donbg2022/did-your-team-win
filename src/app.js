@@ -1,29 +1,35 @@
-import {teamRecord} from '../modules/record.js'
-import {displayNextGame, displayRecord, displayLastGame } from '../modules/displayInfo.js'
+import { getRecord } from "../modules/record"
 
-//imported gameIdLocater which determines winner of the last played cancuks game
+//declare variables to manipulate buttons
+const recordBtn = document.querySelector("#recordBtn")
+const lastGameBtn = document.querySelector("#lastGameBtn")
+const nextGameBtn = document.querySelector("#nextGameBtn")
+const teamChoiceForm = document.querySelector("form")
+const buttons = document.querySelector("#buttons")
 
-//imported canucksRecord which uses axios to determine the record of the canucks
+//variables to display information processed
+const record = document.querySelector("#record")
+const lastGame = document.querySelector("#lastGame")
+const nextGame = document.querySelector("#nextGame")
 
+//variable to update the team that is selected
+const teamNames = document.getElementById("team-names")
+let teamSelected;
 
-//win or lose button which displays the correct photo and text determining the winner
-const lastGameBtn = document.querySelector('#lastGameBtn');
-lastGameBtn.addEventListener('click', displayLastGame) 
+//on form submit this will display more options in the form of buttons
+teamChoiceForm.addEventListener('submit', (e) => {
+  //prevents teh page from reloading
+  e.preventDefault()
+  //displays the button div
+  buttons.style.display = "block"
+  // updates the teamSelected variable to utilize throughout code
+  teamSelected = teamNames.value
 
-const nextGameBtn = document.querySelector('#scheduleBtn');
-nextGameBtn.addEventListener('click', displayNextGame)
+})
 
-const recordBtn = document.querySelector('#recordBtn')
-recordBtn.addEventListener('click', displayRecord)
-
-
-
-
-
-
-
-
-
-
-
-
+//listens for a click on the record button and calls funcction to get the wins, losses for the specific team
+recordBtn.addEventListener("click", () => {
+  getRecord(teamSelected)
+  //display set to block to show thew record
+  record.style.display = "block"
+})
