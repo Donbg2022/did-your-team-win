@@ -32,6 +32,7 @@ teamChoiceForm.addEventListener('submit', (e) => {
 recordBtn.addEventListener("click", () => {
   getRecord(teamSelected)
   //display set to block to show thew record
+  record.innerHTML = "Loading...."
   record.style.display = "block"
 })
 
@@ -39,5 +40,7 @@ recordBtn.addEventListener("click", () => {
 lastGameBtn.addEventListener("click", () => {
   lastGameInfo(teamSelected)
 
+  //display loading until the lastGame is updated
+  lastGame.innerHTML = "Loading...."
   lastGame.style.display = "block"
 })
