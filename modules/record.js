@@ -16,12 +16,12 @@ async function getRecord(teamSelected){
     //loop through the API response to get the team that was chosen 
     for(let i = 0; i < 32; i++){
       //if the team selected matches the team of the current index execute following code
-      if( standings.data.standings[i].teamCommonName.default == teamSelected){
+      if( standings.data.standings[i].teamAbbrev.default == teamSelected){
         //assign values to pre-declared variables 
         wins = standings.data.standings[i].wins
         losses = standings.data.standings[i].losses
         otLosses = standings.data.standings[i].otLosses
-        
+
         //insert the variables into the html
         record.innerHTML = `${wins} - ${losses} - ${otLosses}`
       }

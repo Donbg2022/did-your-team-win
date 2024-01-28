@@ -1,4 +1,5 @@
 import { getRecord } from "../modules/record"
+import { lastGameInfo } from "../modules/lastGame"
 
 //declare variables to manipulate buttons
 const recordBtn = document.querySelector("#recordBtn")
@@ -18,7 +19,7 @@ let teamSelected;
 
 //on form submit this will display more options in the form of buttons
 teamChoiceForm.addEventListener('submit', (e) => {
-  //prevents teh page from reloading
+  //prevents the page from reloading
   e.preventDefault()
   //displays the button div
   buttons.style.display = "block"
@@ -27,9 +28,16 @@ teamChoiceForm.addEventListener('submit', (e) => {
 
 })
 
-//listens for a click on the record button and calls funcction to get the wins, losses for the specific team
+//listens for a click on the record button and calls function to get the wins, losses for the specific team
 recordBtn.addEventListener("click", () => {
   getRecord(teamSelected)
   //display set to block to show thew record
   record.style.display = "block"
+})
+
+//listens for click on last game button and calls fucntion to get info
+lastGameBtn.addEventListener("click", () => {
+  lastGameInfo(teamSelected)
+
+  lastGame.style.display = "block"
 })
