@@ -5,6 +5,9 @@ async function lastGameInfo(chosenTeamAbb) {
   const teamInfo = await axios.get(`https://api-web.nhle.com/v1/club-schedule-season/${chosenTeamAbb}/now`)
   //variable to hold the gameID of the latest game
   let gameID;
+  //variable to insert text into page 
+  const lastGame = document.querySelector("#lastGame")
+
 
   //loop through array of teams schedule to find last game played
   for(let i = 0; i < 83; i++){
@@ -26,15 +29,15 @@ async function lastGameInfo(chosenTeamAbb) {
   //check if the chosenTeam won the game and what the score was
   if(homeTeamAbb == chosenTeamAbb){
     if(homeScore > awayScore){
-      console.log(`${chosenTeamAbb} win ${homeScore} to ${awayScore}`)
+      lastGame.innerHTML = `${chosenTeamAbb} wins ${homeScore} to ${awayScore}`
     }else{
-      console.log(`${chosenTeamAbb} lose ${homeScore} to ${awayScore}`)
+      lastGame.innerHTML = `${chosenTeamAbb} loses ${homeScore} to ${awayScore}`
     }
   }else{
     if(awayScore > homeScore){
-      console.log(`${chosenTeamAbb} win ${awayScore} to ${homeScore}`)
+      lastGame.innerHTML = `${chosenTeamAbb} wins ${awayScore} to ${homeScore}`
     }else{
-      console.log(`${chosenTeamAbb} lose ${homeScore} to ${awayScore}`)
+      lastGame.innerHTML = `${chosenTeamAbb} loses ${homeScore} to ${awayScore}`
     }  
   }
 }
