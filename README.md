@@ -3,4 +3,4 @@ static website made with JS CSS and HTML, bundled with webpack. Checks whether y
 It also shows when the next game is, against who, as well as their record
 
 ## Live Code
-https://didthecanuckswin.netlify.app/
+https://whowon.netlify.app/
