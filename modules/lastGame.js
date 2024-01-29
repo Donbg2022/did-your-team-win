@@ -2,7 +2,7 @@
 
 async function lastGameInfo(chosenTeamAbb) {
   //get request to get chosenTeams schedule
-  const teamInfo = await axios.get(`https://whowon.netlify.app/nhl-api/${chosenTeamAbb}/club-schedule`)
+  const teamInfo = await axios.get(`/nhl-api/${chosenTeamAbb}/club-schedule`)
   //variable to hold the gameID of the latest game
   let gameID;
   //variable to insert text into page 
