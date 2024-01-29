@@ -11,12 +11,12 @@ async function getRecord(teamSelected){
   //try catch block to catch any errors
   try{
       //awwait axios request to NHL API to get standings and stats
-    const standings = await axios.get("https://api-web.nhle.com/v1/standings/now") 
+    const standings = await axios.get("https://whowon.netlify.app/nhl-api/standings") 
 
     //loop through the API response to get the team that was chosen 
     for(let i = 0; i < 32; i++){
       //if the team selected matches the team of the current index execute following code
-      if( standings.data.standings[i].teamAbbrev.default == teamSelected){
+      if(standings.data.standings[i].teamAbbrev.default == teamSelected){
         //assign values to pre-declared variables 
         wins = standings.data.standings[i].wins
         losses = standings.data.standings[i].losses
