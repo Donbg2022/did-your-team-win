@@ -11,7 +11,7 @@ async function getRecord(teamSelected){
   //try catch block to catch any errors
   try{
       //awwait axios request to NHL API to get standings and stats
-    const standings = await axios.get("https://whowon.netlify.app/nhl-api/standings") 
+    const standings = await axios.get("https://nhl-winners.onrender.com/nhl-api/standings") 
 
     //loop through the API response to get the team that was chosen 
     for(let i = 0; i < 32; i++){
