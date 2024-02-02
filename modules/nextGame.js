@@ -1,15 +1,32 @@
 
 
 async function nextGameInfo(chosenTeamAbb) {
-  //get request to get chosenTeams schedule
-  const teamInfo = await axios.get(`https://api-web.nhle.com/v1/club-schedule-season/${chosenTeamAbb}/now`)
-  console.log(teamInfo)
-  //loop through array of teams schedule to find last game played
+  const teamInfo = await axios.get(`https://nhl-winners.onrender.com/nhl-api/${chosenTeamAbb}/club-schedule`)
+  //variable to hold the gameID of the next game
+  let gameID;
+
+  //variable to insert text into page 
+  const nextGame = document.querySelector("#nextGame")
+
+
+  //loop through array of teams schedule to find the next game
   for(let i = 0; i < 83; i++){
-    //check each index to see if gameOutcome is available. if not the last game played is index [i]
-    if(teamInfo.data.games[i].gameOutcome != null &&  teamInfo.data.games[i+1].gameOutcome == null){
-      //set gameID with the ID of the last played game for selected team
+    //check each index to see if gameOutcome is available. if not the next game is index [i]
+    if(teamInfo.data.games[i].gameOutcome == null){
+      //set gameID with the ID of the next game for selected team
       gameID = teamInfo.data.games[i].id
     }
   }
+  
+  //Get request to get information on the next game using the gameID aquired earlier
+  const game =  await axios.get(`https://nhl-winners.onrender.com/nhl-api/${gameID}/boxscore`)
+
+  //declare variables to hold property path's
+  let homeTeamAbb = game.data.homeTeam.abbrev
+  let awayTeamAbb = game.data.awayTeam.abbrev
+
+  //Display the next game info
+  nextGame.innerHTML = `${awayTeamAbb} @ ${chosenTeamAbb} `
 }
+
+export {nextGameInfo}

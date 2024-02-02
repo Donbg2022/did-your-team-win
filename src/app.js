@@ -1,5 +1,6 @@
 import { getRecord } from "../modules/record"
 import { lastGameInfo } from "../modules/lastGame"
+import { nextGameInfo } from "../modules/nextGame"
 
 //declare variables to manipulate buttons
 const recordBtn = document.querySelector("#recordBtn")
@@ -43,4 +44,12 @@ lastGameBtn.addEventListener("click", () => {
   //display loading until the lastGame is updated
   lastGame.innerHTML = "Loading...."
   lastGame.style.display = "block"
+})
+
+nextGameBtn.addEventListener("click", () => {
+  nextGameInfo(teamSelected)
+
+  //display loading until the lastGame is updated
+  nextGame.innerHTML = "Loading...."
+  nextGame.style.display = "block"
 })
