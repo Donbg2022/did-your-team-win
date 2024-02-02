@@ -15,6 +15,8 @@ async function nextGameInfo(chosenTeamAbb) {
     if(teamInfo.data.games[i].gameOutcome == null){
       //set gameID with the ID of the next game for selected team
       gameID = teamInfo.data.games[i].id
+      console.log(gameID)
+   
     }
   }
   
