@@ -12,10 +12,9 @@ async function nextGameInfo(chosenTeamAbb) {
   //loop through array of teams schedule to find the next game
   for(let i = 0; i < 83; i++){
     //check each index to see if gameOutcome is available. if not the next game is index [i]
-    if(teamInfo.data.games[i].gameOutcome == null && teamInfo.data.games[i - 1] !== null){
+    if(teamInfo.data.games[i].gameOutcome == undefined && teamInfo.data.games[i - 1].gameOutcome !== undefined){
       //set gameID with the ID of the next game for selected team
       gameID = teamInfo.data.games[i].id
-      console.log(gameID)
    
     }
   }
