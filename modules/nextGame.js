@@ -26,7 +26,7 @@ async function nextGameInfo(chosenTeamAbb) {
   let awayTeamAbb = game.data.awayTeam.abbrev
 
   //Display the next game info
-  nextGame.innerHTML = `${awayTeamAbb} @ ${chosenTeamAbb} `
+  nextGame.innerHTML = `${awayTeamAbb} @ ${homeTeamAbb} `
 }
 
 export {nextGameInfo}
