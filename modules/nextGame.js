@@ -7,7 +7,7 @@ async function nextGameInfo(chosenTeamAbb) {
 
   //variable to insert text into page 
   const nextGame = document.querySelector("#nextGame")
-
+  console.log(teamInfo)
 
   //loop through array of teams schedule to find the next game
   for(let i = 0; i < 83; i++){
