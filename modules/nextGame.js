@@ -20,7 +20,7 @@ async function nextGameInfo(chosenTeamAbb) {
   
   //Get request to get information on the next game using the gameID aquired earlier
   const game =  await axios.get(`https://nhl-winners.onrender.com/nhl-api/${gameID}/boxscore`)
-
+  console.log(game)
   //declare variables to hold property path's
   let homeTeamAbb = game.data.homeTeam.abbrev
   let awayTeamAbb = game.data.awayTeam.abbrev
