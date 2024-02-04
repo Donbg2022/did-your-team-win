@@ -18,6 +18,19 @@ async function startServer(){
 
 startServer()
 
+mongoose.connection.on('connected', () => {
+  console.log('MongoDB connected successfully');
+});
+
+mongoose.connection.on('error', (err) => {
+  console.error('MongoDB connection error:', err);
+});
+
+mongoose.connection.on('disconnected', () => {
+  console.log('MongoDB disconnected');
+});
+
+
 //initializes express
 const app = express();
 const PORT = process.env.PORT || 10000;
