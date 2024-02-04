@@ -8,6 +8,7 @@ const router = express.Router()
 router.get('/:teamAbb/club-schedule', async (req, res) => {
   const { teamAbb } = req.params;
   try {
+    console.log('attempt')
     const response = await axios.get(`https://api-web.nhle.com/v1/club-schedule-season/${teamAbb}/now`);
     res.json(response.data);
   } catch (error) {
