@@ -4,16 +4,20 @@ const cors = require('cors');
 const NhlRouter = require('./routes/nhl-routes')
 const mongoose = require('mongoose')
 
-const dbURI = "mongodb+srv://donovangriffin04:<password>@nhl-stats.7r3moui.mongodb.net/?retryWrites=true&w=majority"
+const dbURI = "mongodb+srv://donovangriffin04:MojsGJQrjHFOoegm@nhl-stats.7r3moui.mongodb.net/?retryWrites=true&w=majority"
 
-connect().catch((e) => {
-  console.log(e)
-})
+
 
 async function connect() {
-  await mongoose.connect(dbURI)
+  await mongoose.connect(dbURI,{
+    useNewUrlParser: true, 
+    useUnifiedTopology: true
+  })
   console.log("connected")
 }
+connect().catch((e) => {
+  console.error(e)
+})
 
 //initializes express
 const app = express();
