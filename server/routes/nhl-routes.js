@@ -4,7 +4,7 @@ const express = require('express')
 const router = express.Router()
 const app = express();
 
-app.get('/nhl-api/:teamAbb/club-schedule', async (req, res) => {
+app.get('/:teamAbb/club-schedule', async (req, res) => {
   const { teamAbb } = req.params;
   try {
     const response = await axios.get(`https://api-web.nhle.com/v1/club-schedule-season/${teamAbb}/now`);
@@ -14,7 +14,7 @@ app.get('/nhl-api/:teamAbb/club-schedule', async (req, res) => {
   }
 });
 
-app.get('/nhl-api/:gameID/boxscore', async (req, res) => {
+app.get('/:gameID/boxscore', async (req, res) => {
   const { gameID } = req.params;
   try {
     const response = await axios.get(`https://api-web.nhle.com/v1/gamecenter/${gameID}/boxscore`);
@@ -24,7 +24,7 @@ app.get('/nhl-api/:gameID/boxscore', async (req, res) => {
   }
 });
 
-app.get('/nhl-api/standings', async (req, res) => {
+app.get('/standings', async (req, res) => {
   try {
     const response = await axios.get("https://api-web.nhle.com/v1/standings/now");
     res.json(response.data);
