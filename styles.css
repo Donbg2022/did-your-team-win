@@ -1,122 +1,128 @@
-:root{
-  --primary-color: rgb(4,28,44);
-  --secondary-color: rgb(10,134,61);
-  --alternate-color: rgb(0, 0, 0);
-}
 
-/* //find out how to cghange variable using js
-//make a object with all teams colors 
-create a module to change to those colors by updating the css variable to the correct color
-*/
-
-/* make sure all colors are using variables so that when a click event happens they allk change */
-
-
-*{
-  box-sizing: border-box;
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
   margin: 0;
   padding: 0;
 }
-body{
-  background-color: var(--primary-color);
+
+/* Box-sizing border-box for all elements */
+* {
+  box-sizing: border-box;
 }
 
-/* navbar styling */
-nav{
+/* Global styles */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navigation styles */
+nav {
+  background-color: #333;
+  padding: 10px 0;
   display: flex;
   justify-content: space-between;
-
-}
-nav img{
-  width: 90px;
-  margin-left: 5px;
-  margin-top: 5px;
+  align-items: center;
 }
 
-
-nav button{
-  margin: 30px 10px 30px 30px;
-  width: 8rem;
-  color: var(--alternate-color);
-  background-color: var(--secondary-color);
-  border: 1px solid var(--alternate-color);
-  box-shadow: 0 0 10px 0 var(--alternate-color);
-  font-size: large;
-}
-nav button:active{
-  background-color:  var(--secondary-color);
+#nav-img {
+  width: 80px;
 }
 
-nav div{
-  font-size: xx-large;
-  font-weight: 100;
-  color: var(--primary-color);
-  margin: 40px 30px 40px 30px;
-  display: none;
+#navbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
 }
 
-/* dropdown */
-#team-names, .form-btn{
-  background-color: var(--secondary-color);
-  color: var(--alternate-color);
+/* Form styles */
+.form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.form-btn{
-  padding: 0 .25rem;
+
+#team-names {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
 }
-.form{
-  text-align: center;
+
+.form-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Text wrapper styles */
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
 }
 
+#lastGame, #nextGame, #record {
+  margin-bottom: 20px;
+}
 
-  /* homepage Main photo */
+/* Buttons styles */
+#buttons {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
 
-#buttons{
-  text-align: center;
-  margin-top: 6rem;
-  display: none;
-}
-#buttons button{
-  padding: 2rem;
-  background-color: var(--secondary-color);
-  color: var(--alternate-color);
-  border: none;
-  
-}
-#buttons button:active{
-  background-color: var(--secondary-color);
-}
-#record{
-  display: none;
-  font-weight: 600;
-  font-size: larger;
-}
-#lastGame, #next-game{
-  display: none;
-  text-align: center;
-  padding: 2rem;
-  color: var(--alternate-color);
-  font-weight: 600;
-  font-size: larger;
-}
-#mainimgcontainer{
-  text-align: center;
-}
-#winbtn{
-  padding: 1rem;
-  background-color: var(--primary-color);
-  color: var(--alternate-color);
-  border: 1px solid var(--primary-color);
-  box-shadow: 0 0 10px 0 var(--alternate-color);
+#lastGameBtn, #nextGameBtn, #recordBtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
   margin-top: 10px;
-}
-#winbtn:active{
-background-color: var(--secondary-color);
-}
-#record{
-  text-align: center;
-  padding: 20px;
-  color: var(--alternate-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
 }
 
+/* Roster section styles */
+.roster {
+  margin-top: 20px;
+}
 
+.nucksroster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .form {
+    padding: 15px;
+  }
+  
+  #buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+}

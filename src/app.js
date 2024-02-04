@@ -23,7 +23,7 @@ teamChoiceForm.addEventListener('submit', (e) => {
   //prevents the page from reloading
   e.preventDefault()
   //displays the button div
-  buttons.style.display = "block"
+  buttons.style.display = "flex"
   // updates the teamSelected variable to utilize throughout code
   teamSelected = teamNames.value
 
