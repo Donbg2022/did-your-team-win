@@ -7,17 +7,16 @@ const mongoose = require('mongoose')
 const dbURI = "mongodb+srv://donovangriffin04:MojsGJQrjHFOoegm@nhl-stats.7r3moui.mongodb.net/?retryWrites=true&w=majority"
 
 
-
-async function connect() {
-  await mongoose.connect(dbURI,{
-    useNewUrlParser: true, 
-    useUnifiedTopology: true
-  })
-  console.log("connected")
+async function startServer(){
+  try{
+    await mongoose.connect(dbURI)
+    console.log("connected")
+  }catch(err){
+    console.error(err)
+  }
 }
-connect().catch((e) => {
-  console.error(e)
-})
+
+startServer()
 
 //initializes express
 const app = express();
