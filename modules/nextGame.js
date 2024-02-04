@@ -1,4 +1,4 @@
-
+import axios from 'axios'
 
 async function nextGameInfo(chosenTeamAbb) {
   const teamInfo = await axios.get(`https://nhl-winners.onrender.com/nhl-api/${chosenTeamAbb}/club-schedule`)
