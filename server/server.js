@@ -28,7 +28,7 @@ const PORT = process.env.PORT || 10000;
 app.use(express.json()); //Parse incoming JSON 
 app.use(cors()); //enables CORS
 
-app.use('/nhl-api', NhlRouter)
+app.use('nhl-api', NhlRouter)
 
 
 app.listen(PORT, () => {
