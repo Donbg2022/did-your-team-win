@@ -1,7 +1,7 @@
-const Express = require('express')
+const express = require('express')
 
 
-const router = Express.Router()
+const router = express.Router()
 const app = express();
 
 app.get('/nhl-api/:teamAbb/club-schedule', async (req, res) => {
