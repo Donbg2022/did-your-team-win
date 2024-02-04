@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const cors = require('cors'); 
 const NhlRouter = require('./routes/nhl-routes')
-import mongoose from 'mongoose';
+const mongoose = require('mongoose')
 
 const dbURI = "mongodb+srv://donovangriffin04:<password>@nhl-stats.7r3moui.mongodb.net/?retryWrites=true&w=majority"
 
