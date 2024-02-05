@@ -8,6 +8,7 @@ console.log("running")
     console.log(response.data)
   }catch(err){
     console.error(err)
+    console.log("test1")
   }
 }
 
