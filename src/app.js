@@ -1,6 +1,7 @@
 import { getRecord } from "../modules/record"
 import { lastGameInfo } from "../modules/lastGame"
 import { nextGameInfo } from "../modules/nextGame"
+import { SignUp } from "../modules/signUp"
 
 //declare variables to manipulate buttons
 const recordBtn = document.querySelector("#recordBtn")
@@ -71,5 +72,16 @@ nextGameBtn.addEventListener("click", () => {
     signUpForm.style.display = 'none';
   })
 
+  signUpForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    let newUser = {
+      name: document.querySelector('#signUpUsername').value,
+      email: document.querySelector('#signUpEmail').value,
+      password: document.querySelector('#signUpPassword').value,
+      team: document.querySelector('#signUpTeam').value
+    }
+    console.log(newUser)
 
+    SignUp(newUser)
+  })  
 
