@@ -1,6 +1,5 @@
 const express = require("express")
 const axios = require('axios')
-const MongoClient = require("mongodb")
 const userSchema = require('../schema/userSchema')
 const db = require("../server")
 
@@ -11,15 +10,16 @@ const usersDB =
 
 router.post('/signup', async(req, res) => {
   const { name, email, password, team } = req.body
+  
   const newUser = userSchema({
     name,
     email,
     password,
     team
   })
-
+console.log(newUser)
   try{
-    await db.collection('users').insertOne(newUser)
+    await newUser.save()
     console.log("user saved succesfully")
   }catch(err){
     console.log(err)
