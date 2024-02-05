@@ -14,7 +14,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  fave_team: {
+  team: {
     type: String,
     required: true
   }
