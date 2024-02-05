@@ -9,7 +9,7 @@ const router = express.Router()
 
 const usersDB = 
 
-router.get('/signup', async(req, res) => {
+router.post('/signup', async(req, res) => {
   const { name, email, password, team } = req.body
   const newUser = userSchema({
     name,
