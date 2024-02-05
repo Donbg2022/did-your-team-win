@@ -53,3 +53,23 @@ nextGameBtn.addEventListener("click", () => {
   nextGame.innerHTML = "Loading...."
   nextGame.style.display = "block"
 })
+
+
+//signup signin form events
+
+  const signUpBtn = document.getElementById('signUpBtn')
+  const signInBtn = document.getElementById('signInBtn')
+  let signInForm = document.getElementById('signInForm');
+  let signUpForm = document.getElementById('signUpForm');
+
+  signUpBtn.addEventListener('click', () => {
+    signInForm.style.display = 'none';
+    signUpForm.style.display = 'block';
+  })
+  signInBtn.addEventListener('click', () => {
+    signInForm.style.display = 'block';
+    signUpForm.style.display = 'none';
+  })
+
+
+

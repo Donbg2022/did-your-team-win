@@ -12,46 +12,47 @@
   <!-- navbar -->
   <nav>
     <a href="index.html"><img id="nav-img" src="./images/logos/Vancouver.png" alt="company logo"></a>
-    <button id="navbtn">Click me after choosing a team</button>
+    <div>
+      <a href="#signup" ><button id="signUpBtn" class="nav-btn">Signup</button></a>
+      <a href="#signin" ><button id="signInBtn" class="nav-btn">Sign In</button></a>
+  </div>
   </nav>
   <div class="easterEgg"></div>
 
   <form class="form" action="">
   <select name="" id="team-names">
     <option value="ANA">Anaheim Ducks</option>
-<option value="ARI">Arizona Coyotes</option>
-<option value="BOS">Boston Bruins</option>
-<option value="BUF">Buffalo Sabres</option>
-<option value="CGY">Calgary Flames</option>
-<option value="CAR">Carolina Hurricanes</option>
-<option value="CHI">Chicago Blackhawks</option>
-<option value="COL">Colorado Avalanche</option>
-<option value="CBJ">Columbus Blue Jackets</option>
-<option value="DAL">Dallas Stars</option>
-<option value="DET">Detroit Red Wings</option>
-<option value="EDM">Edmonton Oilers</option>
-<option value="FLA">Florida Panthers</option>
-<option value="LAK">Los Angeles Kings</option>
-<option value="MIN">Minnesota Wild</option>
-<option value="MTL">Montreal Canadiens</option>
-<option value="NSH">Nashville Predators</option>
-<option value="NJD">New Jersey Devils</option>
-<option value="NYI">New York Islanders</option>
-<option value="NYR">New York Rangers</option>
-<option value="OTT">Ottawa Senators</option>
-<option value="PHI">Philadelphia Flyers</option>
-<option value="PIT">Pittsburgh Penguins</option>
-<option value="SJS">San Jose Sharks</option>
-<option value="SEA">Seattle Kraken</option>
-<option value="STL">St. Louis Blues</option>
-<option value="TBL">Tampa Bay Lightning</option>
-<option value="TOR">Toronto Maple Leafs</option>
-<option value="VAN">Vancouver Canucks</option>
-<option value="VGK">Vegas Golden Knights</option>
-<option value="WSH">Washington Capitals</option>
-<option value="WPG">Winnipeg Jets</option>
-
-    
+    <option value="ARI">Arizona Coyotes</option>
+    <option value="BOS">Boston Bruins</option>
+    <option value="BUF">Buffalo Sabres</option>
+    <option value="CGY">Calgary Flames</option>
+    <option value="CAR">Carolina Hurricanes</option>
+    <option value="CHI">Chicago Blackhawks</option>
+    <option value="COL">Colorado Avalanche</option>
+    <option value="CBJ">Columbus Blue Jackets</option>
+    <option value="DAL">Dallas Stars</option>
+    <option value="DET">Detroit Red Wings</option>
+    <option value="EDM">Edmonton Oilers</option>
+    <option value="FLA">Florida Panthers</option>
+    <option value="LAK">Los Angeles Kings</option>
+    <option value="MIN">Minnesota Wild</option>
+    <option value="MTL">Montreal Canadiens</option>
+    <option value="NSH">Nashville Predators</option>
+    <option value="NJD">New Jersey Devils</option>
+    <option value="NYI">New York Islanders</option>
+    <option value="NYR">New York Rangers</option>
+    <option value="OTT">Ottawa Senators</option>
+    <option value="PHI">Philadelphia Flyers</option>
+    <option value="PIT">Pittsburgh Penguins</option>
+    <option value="SJS">San Jose Sharks</option>
+    <option value="SEA">Seattle Kraken</option>
+    <option value="STL">St. Louis Blues</option>
+    <option value="TBL">Tampa Bay Lightning</option>
+    <option value="TOR">Toronto Maple Leafs</option>
+    <option value="VAN">Vancouver Canucks</option>
+    <option value="VGK">Vegas Golden Knights</option>
+    <option value="WSH">Washington Capitals</option>
+    <option value="WPG">Winnipeg Jets</option>
   </select>
   <button id="submit" class="form-btn" type="submit">SUBMIT</button>
 </form>
@@ -80,6 +81,79 @@
 
   </div>
 </section>
+
+
+<section id="signup">
+
+    <div class="form-container">
+      <!-- Sign up Form -->
+      <form id="signUpForm">
+          <label for="signUpUsername">Username:</label>
+          <input type="text" id="signUpUsername" name="signUpUsername" required>
+  
+          <label for="signUpPassword">Password:</label>
+          <input type="password" id="signUpPassword" name="signUpPassword" required>
+
+          <label for="signUpEmail">Email:</label>
+          <input type="email" id="signUpEmail" name="signUpEmail" required>
+
+          <label for="signUpTeam">Favourite Team:</label>
+          <select name="signUpTeam" id="signUpTeam">
+            <option value="ANA">Anaheim Ducks</option>
+            <option value="ARI">Arizona Coyotes</option>
+            <option value="BOS">Boston Bruins</option>
+            <option value="BUF">Buffalo Sabres</option>
+            <option value="CGY">Calgary Flames</option>
+            <option value="CAR">Carolina Hurricanes</option>
+            <option value="CHI">Chicago Blackhawks</option>
+            <option value="COL">Colorado Avalanche</option>
+            <option value="CBJ">Columbus Blue Jackets</option>
+            <option value="DAL">Dallas Stars</option>
+            <option value="DET">Detroit Red Wings</option>
+            <option value="EDM">Edmonton Oilers</option>
+            <option value="FLA">Florida Panthers</option>
+            <option value="LAK">Los Angeles Kings</option>
+            <option value="MIN">Minnesota Wild</option>
+            <option value="MTL">Montreal Canadiens</option>
+            <option value="NSH">Nashville Predators</option>
+            <option value="NJD">New Jersey Devils</option>
+            <option value="NYI">New York Islanders</option>
+            <option value="NYR">New York Rangers</option>
+            <option value="OTT">Ottawa Senators</option>
+            <option value="PHI">Philadelphia Flyers</option>
+            <option value="PIT">Pittsburgh Penguins</option>
+            <option value="SJS">San Jose Sharks</option>
+            <option value="SEA">Seattle Kraken</option>
+            <option value="STL">St. Louis Blues</option>
+            <option value="TBL">Tampa Bay Lightning</option>
+            <option value="TOR">Toronto Maple Leafs</option>
+            <option value="VAN">Vancouver Canucks</option>
+            <option value="VGK">Vegas Golden Knights</option>
+            <option value="WSH">Washington Capitals</option>
+            <option value="WPG">Winnipeg Jets</option>
+          </select>
+  
+          <button type="submit">Sign Up</button>
+      </form>
+</section>
+
+<section id="signin">
+
+  <div class="form-container">
+    <!-- Sign In Form -->
+    <form id="signInForm">
+        <label for="signInUsername">Username:</label>
+        <input type="text" id="signInUsername" name="signInUsername" required>
+
+        <label for="signInPassword">Password:</label>
+        <input type="password" id="signInPassword" name="signInPassword" required>
+
+        <button type="submit">Sign In</button>
+    </form>
+
+</section>
+
+
 <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 <script type="module" src="./dist/main.js"></script>
 </body>
