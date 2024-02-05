@@ -19,7 +19,7 @@ router.post('/signup', async(req, res) => {
   })
 
   try{
-    await db.save(newUser)
+    await db.collection('users').insertOne(newUser)
     console.log("user saved succesfully")
   }catch(err){
     console.log(err)
